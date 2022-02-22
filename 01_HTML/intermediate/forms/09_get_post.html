@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Post</title>
+</head>
+<body>
+    <h1><a href="../../index.html">index</a></h1>
+    <h3>
+        <a href="09_get_post.html?pageNum=9&search=abc"></a>
+    </h3>
+    <form action="" method="POST">
+        <label for="">색상코드</label><br>
+        <input type="color" name="clr" id=""><br>
+        <button type="submit">submit</button>
+        <!-- server가 데이터를 받을 때 {key1}={value1}&{key2}={value2}&..
+             최대 문자가 255자 까지 전송가능 => get 방식(a/form tag default)
+             문제점1. 255자 라는 크기제한
+             문제점2. 입력정보가 url에 보이기 때문에 보안문제가 있음
+             method="post"를 사용하면 get방식이 post방식으로 바뀜
+             장점1. 크기제한이 없음
+             장점2. query string이 보이지 않음. 보안이 된다는건 아님.
+             (물론 url에서만 안보이고 개발자도구에선 보임)
+             (f12->네트워크->headers->form data)
+             (a tag에서는 사용 불가) 
+            
+             csrf로 카피페이지를 만들어서 server로 보내면 server는 어디서 정보가
+             온 것인지 판단 불가 
+             server로 인증을 받는 보안방식이 필요-->
+</body>
+</html>

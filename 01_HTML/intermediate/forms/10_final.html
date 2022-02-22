@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final</title>
+    <style>
+        table {
+            width: 47%;
+        }
+        .table, tr, td{
+            padding-left: 1%;
+            /*border: 1px solid black;*/
+            border-collapse: collapse;
+        }
+        tr, td {
+            border-bottom: 1px solid lightgray;
+        }
+        #table1 {
+            margin-top: 30px;
+        }
+        th {
+            border-bottom: 2px solid skyblue;
+        }
+        .top_text_right {
+            text-align: right;
+        }
+        .top_text_left, .top_text_left2 {
+            border-bottom: 4px solid skyblue;
+        }
+        #none {
+            color: rgba(0, 0, 0, 0);
+        }
+        .first2 {
+            background-color: #f2f2f2;
+        }
+        #re_pwd {
+            width: 90px;
+        }
+        #email {
+            width: 70%;
+        }
+        #post_num1, #post_num2 {
+            width: 50px;
+        }
+        #address1 {
+            width: 80%;
+        }
+        #f_national, #l_national, #f_mobile, #l_mobile {
+            width: 50px;
+        }
+        #submit {
+            margin-left: 25%;
+        }
+        #second {
+            width: 130px;
+        }
+        #third {
+            width: 480px;
+        }
+        label {
+            font-size: medium;
+        }
+        span {
+            color: red;
+        }
+        .orange {
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <div><h2>회원가입 | <label><span>M</span>ember <span>P</span>rivate Information</label></h2></div>
+    <form action="">
+    <table class="table" id="table1">
+        <tbody>
+            <tr>
+                <th colspan="2" class="top_text_left">📄기본정보 입력</th>
+                <th colspan="2" class="top_text_right">✔표시는 필수항목이므로 반드시 입력해야 합니다.</th>
+            </tr>
+            <tr>
+                <td class="first2">✔</td>
+                <td class="first2" id="second"><label for="id">아이디</label></td>
+                <td id="third"><input type="text" name="id" id="id">
+                    <button type="button">✅중복검색</button>영문</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="first2">✔</td>
+                <td class="first2"><label for="pwd">비밀번호</label></td>
+                <td><input type="password" name="password" id="pwd">→재확인
+                    <input type="password" name="" id="re_pwd"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="first2">✔</td>
+                <td class="first2" class="first2"><label for="pwd_hint">비밀번호힌트</label></td>
+                <td><input type="text" name="hint" id="pwd_hint">비번분실-조회시 참고할 내용</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="first2">✔</td>
+                <td class="first2"><label for="name">이름(본명)</label></td>
+                <td><input type="text" name="name" id="name">→한글</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="first2">✔</td>
+                <td class="first2"><label for="nickname">닉네임(별명)</label></td>
+                <td><input type="text" name="username" id="nickname">
+                    <button type="button">✅중복검색</button>한글, 영문</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="first2">✔</td>
+                <td class="first2"><label for="email">전자메일주소</label></td>
+                <td><input type="email" name="email" id="email"></td>
+                <td><input type="checkbox" name="email_hid" id="">비공개</td>
+            </tr>
+            <tr>
+                <td class="first2">✔</td>
+                <td class="first2"><label for="date_of_birth">생년월일</label></td>
+                <td><select name="year" id="">
+                        <option value="">년</option>
+                        <option value="1996">1996</option>
+                        <option value="1995">1995</option>
+                        <option value="1994">1994</option>
+                        <option value="1993">1993</option>
+                        <option value="1992">1992</option>
+                </select>-
+                <select name="month" id="">
+                    <option value="">월</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>-
+                <select name="day" id="">
+                    <option value="">일</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+                <input type="radio" name="year_stan" id="" value="lunar_year">음
+                <input type="radio" name="year_stan" id="" value="solar_year" checked>양
+                </td>
+                <td><input type="checkbox" name="email_hid" id="">비공개</td>
+            </tr>
+            <tr>
+                <td class="first2">✔</td>
+                <td class="first2"><label for="gen">성별</label></td>
+                <td><input type="radio" name="gen" id="" value="male">남자
+                    <input type="radio" name="gen" id="" value="female">여자</td>
+                <td><input type="checkbox" name="email_hid" id="" disabled>비공개</td>
+            </tr>
+            <tr>
+                <td class="first2" id="none">✔</td>
+                <td class="first2">우편번호</td>
+                <td><input type="text" name="post_num1" id="post_num1">-
+                    <input type="text" name="post_num2" id="post_num2">
+                    <button type="button">🔍찾아보기</button></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="first2" id="none">✔</td>
+                <td class="first2">주소</td>
+                <td><input type="text" name="address1" id="address1"><br>
+                    <input type="text" name="address2" id="address2">←나머지주소</td>
+                <td><input type="checkbox" name="email_hid" id="" checked>비공개</td>
+            </tr>
+            <tr>
+                <td class="first2" id="none">✔</td>
+                <td class="first2"><label for="home_tel">일반전화 번호</label></td>
+                <td><select name="home_tel" id="home_tel">
+                    <option value="">국번</option>
+                </select>-
+                    <input type="number" name="f_national" id="f_national">-
+                    <input type="number" name="l_national" id="l_national">
+                </td>
+                <td><input type="checkbox" name="email_hid" id="" checked>비공개</td>
+            </tr>
+            <tr>
+                <td class="first2" id="none">✔</td>
+                <td class="first2"><label for="mobile_tel">휴대전화 번호</label></td>
+                <td><select name="mobile_tel" id="mobile_tel">
+                    <option value="">국번</option>
+                    <option value="010"></option>
+                </select>-
+                    <input type="number" name="f_mobile" id="f_mobile">-
+                    <input type="number" name="l_mobile" id="l_mobile">
+                </td>
+                <td><input type="checkbox" name="email_hid" id="" checked>비공개</td>
+            </tr>
+            <tr>
+                <td class="first2" id="none">✔</td>
+                <td class="first2"><label for="homepage">홈페이지</label></td>
+                <td><input type="url" name="homepage" id="homepage" value="http://"></td>
+                <td><input type="checkbox" name="email_hid" id="">비공개</td>
+            </tr>
+            <tr>
+                <td class="first2" id="none">✔</td>
+                <td class="first2"><label for="ment">소개,인사말</label></td>
+                <td><textarea name="ment" id="ment" cols="40" rows="4">반갑습니다.</textarea></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table class="table" id="table2">
+        <tbody>
+            <tr>
+                <th colspan="2" class="top_text_left2">📄추가정보 입력</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td class="first2" id="none">✔</td>
+                <td class="first2" id="second"><label for="photo">사진첨부</label></td>
+                <td id="third"><input type="text" name="" id="photo">
+                    <button type="button">찾아보기</button><br>
+                    <span class="orange">200</span> x <span class="orange">200</span> 픽셀 이하 크기만 적용</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="first2" id="none"></td>
+                <td class="first2"><label for="icon">이름표시 아이콘</label></td>
+                <td><input type="text" name="" id="icon">
+                    <button type="button">찾아보기</button>
+                    <button type="button">🔍찾아보기</button><br>
+                    <span class="orange">25</span> x <span class="orange">20</span> 픽셀 이하 크기만 적용</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="first2" id="none"></td>
+                <td class="first2"><label for="">혼인여부</label></td>
+                <td><input type="radio" name="" id="">미혼
+                    <input type="radio" name="" id="">기혼
+                    <input type="radio" name="" id="">이혼
+                    <input type="radio" name="" id="">교제중</td>
+                <td><input type="checkbox" name="email_hid" id="">비공개</td>
+            </tr>
+            <tr>
+                <td class="first2" id="none"></td>
+                <td class="first2"><label for="">관심분야</label></td>
+                <td><select name="" id="">
+                    <option value="">선택없음</option>
+                    <option value="">선택1</option>
+                </select></td>
+                <td><input type="checkbox" name="email_hid" id="">비공개</td>
+
+            </tr>
+            <tr>
+                <td class="first2" id="none"></td>
+                <td class="first2"><label for="">캐릭터 선택</label></td>
+                <td><input type="text" name="" id="photo">
+                    <button type="button">🔍찾아보기</button>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="first2" id="none"></td>
+                <td class="first2"><label for="">메일링 수신거부</label></td>
+                <td><input type="checkbox" name="" id="">
+                    메일링 수신 거부시 체크.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="first2" id="none"></td>
+                <td class="first2"><label for="">쪽지 수신거부</label></td>
+                <td><input type="checkbox" name="" id="">
+                    쪽지 수신 거부시 체크.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="first2" id="none"></td>
+                <td class="first2"><label for="">전체 비공개</label></td>
+                <td><input type="checkbox" name="" id="">
+                    회원등록정보 전체 비공개시 체크.</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <button type="button" id="submit">입력완료전송</button>
+    <button type="reset" id="reset">다시입력하기</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form(Others)</title>
+</head>
+<body>
+    <h1><a href="../../index.html">index</a></h1>
+    <form action="">
+        <label for="date">날짜입력 가능</label>
+        <input type="date" name="" id=""><br>
+        <label for="">현지 날짜/시간 형식</label>
+        <input type="datetime-local" name="" id=""><br>
+        <label for="">월/연도</label>
+        <input type="month" name="" id=""><br>
+        <label for="">시간</label>
+        <input type="time" name="" id=""><br>
+        <label for="">주/년도</label>
+        <input type="week" name="" id=""><br>
+    </form>
+    <hr>
+    <form action="">
+        <label for="">색상코드</label>
+        <input type="color" name="" id=""><br>
+        <label for="">이메일</label>
+        <input type="email" name="" id="" autofocus><br>
+        <label for="">전화번호</label>
+        <input type="tel" name="" id=""><br>
+        <label for="">검색어 입력</label>
+        <input type="search" name="" id="" autocomplete=""><br>
+        <label for="">슬라이더 컨트롤</label>
+        <input type="range" name="" id=""><br>
+        <label for="">URL</label>
+        <input type="url" name="" id=""><br>
+        <label for="">숨김</label>
+        <input type="hidden" name="" id="" vlaue=""><br>
+        <label for="">이미지 버튼</label><br>
+        <input type="image" src="../../basic/b.jpg" alt=""><br>
+        <button type="submit">submit</button>
+        <button type="reset" name="" id="">초기화</button><br>
+        <button type="button">일반버튼</button>
+        <!-- 1. hidden type은 name과 value가 필수이다. 사용자에게 보여지지
+             않고 내가 원하는 정보를 server에 보낼 때 사용.
+             2. label의 for="" 값과 input의 id=""가 같아야 두개가 묶임.
+             3. tel/search등에 pattern="" 속성으로 입력받을 문자의 형식 지정가능
+             4. reset도 input tag로 만들수 있음. 하지만 나중에 input타입의 스타일을
+             지정하게 되면 초기화버튼도 영향을 받게 됨.
+             그래서 버튼타입의 input들은 button으로 만들도록 권장됨.
+             5. 다양한 input중에서 원하는 순서로 focus를 주기 위해서는 
+             autofocus속성을 사용. 
+             6. autocomplete는 자동완성기능을 사용가능하게 해주나, 보안상 
+             권장되지 않음. -->
+    </form>
+</body>
+</html>

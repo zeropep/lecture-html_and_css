@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form(Select)</title>
+</head>
+<body>
+    <h1><a href="../../index.html">index</a></h1>
+    <h1>Drop style UI - select option(single, multiple)</h1>
+    <form>
+    <select name="tcorp" id="">
+        <option value="">------</option> <!-- <= validation 필요 -->
+        <option value="SKT">SKT</option>
+        <option value="KT">KT</option>
+        <option value="LGT">LGT</option>
+        <option value="OPT">알뜰폰</option>
+    </select>
+    <button type="submit">submit</button>
+    <!-- 1. 사용자가 이미 선택해서 가입을 한 상태로 회원정보 수정을 하려고 하는 경우에는
+         selected로 선택한 상태를 보여줄 수 있음.
+         2. 사용자에게 선택을 요구하는 메세지를 줘야함.
+         그러나 선택하라는 항목을 만들면, 그 상태로 제출할 시에 올바른 값이 아닌 것을
+         캐치해주는 validation 과정을 만들어야 함. -->
+    <hr>
+    </form>
+    <form action="">
+        <select name="favor" id="" multiple>
+            <option value="tomato">tomato</option>
+            <option value="apple">apple</option>
+            <option value="banana">banana</option>
+            <option value="melon">melon</option>
+            <option value="orange">orange</option>
+            <option value="pineapple">pineapple</option>
+        </select>
+        <button type="submit">submit</button>
+    <!-- select에서는 mutiple이라는 속성은 주지 않는다.
+         다중선택이라는 옵션을 원한다면 checkbox를 사용한다.
+         select로 다중선택을 하게 된다면 선택하고 제출한 항목의 key가 
+         다 동일한 문제점을 갖게 됨. -->
+    </form>
+    <hr>
+    <form action="">
+        <select name="tech" id="">
+            <optgroup label="html5">
+                <option value="video">MP4, OGG</option>
+                <option value="audio">MP3, OGG</option>
+            </optgroup>
+            <optgroup label="css3">
+                <option value="ani">Animation</option>
+                <option value="3D">3D Transform</option>
+            </optgroup>
+        </select>
+        <button type="submit">submit</button>
+    <!-- 자주 사용되지는 않지만 가능한 용법 (옵션 그룹화)-->
+    </form>
+</body>
+</html>

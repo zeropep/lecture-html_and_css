@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Transfer</title>
+</head>
+<body>
+    <h1><a href="../../index.html">index</a></h1>
+    <h1>데이터 전송타입</h1>
+    <form action="">
+        <label for="date">ex) 날짜</label><br>
+        <input type="date" name="today" id="" value=""><br>
+        <input type="date" name="that_day" id="" value="2021-09-20"><br>
+        <button type="submit">submit</button>
+        <!-- 1. 기본 데이터 전송타입은 모두 문자형식(string, str) ~~?{key}={value}
+             2. 날짜의 전송형식은 2021-09-20 -->
+    </form>
+    <hr>
+    <form action="">
+        <label for="">현지 날짜/시간 형식</label><br>
+        <input type="datetime-local" name="now" id=""><br>
+        <button type="submit">submit</button>
+        <!-- 1. 시간의 전송형식은 T16%3A13이런 식.
+             2. T(Time), 16(24시간기준 16시), %3A(':'의 유니코드), 13(13분)
+             3. 값을 입력할때와 전송할 때 시간이 다른 경우가 많기 때문에
+             html만으로는 한계가 있다.-> js등이 필요. -->
+    </form>
+    <hr>
+    <form action="">
+        <label for="">색상코드</label><br>
+        <input type="color" name="clr" id=""><br>
+        <button type="submit">submit</button>
+        <!-- 1. 색상의 전송형식은 %23e61919이런 식 
+             2. 기본 색상코드는 HEX형식으로 제출됨.
+             3. %23('#'의 유니코드)-->
+    </form>
+    <hr>
+    <form action="">
+        <label for="">슬라이더 컨트롤</label><br>
+        <input type="range" name="ran" id=""
+               min="1" max="50" step="1"><br>
+        <button type="submit">submit</button>
+        <!-- 1. step의 값에따라 사용자가 value값 조절 가능. -->
+    </form>
+    <hr>
+    <form action="">
+        <label for="">숨김</label>
+        <input type="hidden" name="hid" id="" vlaue="11"><br>
+        <button type="submit">submit</button>
+        <!-- 1. step의 값에따라 사용자가 value값 조절 가능. -->
+    </form>
+</body>
+</html>

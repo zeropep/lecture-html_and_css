@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form(text & number)</title>
+</head>
+<body>
+    <h1><a href="../../index.html">index</a></h1>
+    <form>
+        <label for="myName">My Name</label>
+        <input type="text" id="myName" name="myName" value="tomato"><br>
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" min="0" value="18"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    <h3>Sign up</h3>
+    <form>
+        PWD : <input type="password" name="pwd" id="" required><br>
+        <label for="ID">ID : </label>
+        <input type="text" id="ID" placeholder="tomato"
+               name="ID" readonly><br>
+        <label for="myName">My Name</label>
+        <input type="text" id="myName" placeholder="ex) jason park"
+               name="myName" ><br>
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" min="0" 
+               placeholder="ex) 25" disabled><br>
+        <input type="submit" value="Submit">
+    </form>
+    <!-- 1. form tag의 name은 server측으로 정보를 보낼 때, 그 정보를 설명하는 key name 
+         ex) fname=??&iname=?? 
+         2. placeholder만 있을때는 focus 상태라고 부름
+         input란에 입력이 시작되면 
+         3. text input란에 숫자를 써도 에러가 나지 않는다.
+         즉 사용자가 입력한 것을 글자인지 숫자인지 확인하는 작업이 필요함.
+         4. readonly는 사용자가 변경 불가하나 서버로 전송이 됨.
+         5. disabled는 사용자가 변경 불가하고 서버로 전송되지 않음.
+         6. input은 싱글태그임. text보다는 value가 중요하기 때문.
+         7. required는 제출시 입력란이 비어있는지 확인하고 비어있다면 에러출력-->
+</body>
+</html>

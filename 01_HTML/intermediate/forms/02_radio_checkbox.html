@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form(Radio & Checkbox)</title>
+</head>
+<body>
+    <h1><a href="../../index.html">index</a></h1>
+    <h1>단일, 복수 선택 기능 구현</h1>
+    <form>
+        Blood Type? <br>
+        <input type="radio" name="bloodType" id="" value="A">A&nbsp;
+        <input type="radio" name="bloodType" id="" value="B">B&nbsp;
+        <input type="radio" name="bloodType" id="" value="O">O&nbsp;
+        <input type="radio" name="bloodType" id="" value="AB">AB<br>
+        <input type="submit" value="Submit">
+        <!-- radio tag는 사용자가 입력하는 정보는 name과 input바깥의 
+             text가 함께 묶여서 가지 않기 때문에
+             value로 서로 다른 선택지를 표기해주어야 함.
+             쉽게말하면 사용자가 선택할 때 보게되는 선택지는 server측으로 가지 않음.
+             그러므로 server가 받을 value값을 지정해 주어야 함.
+             id는 그저 개발자가 css나 js같은 기능을 사용할 때 표시하기 위함.
+             radio의 name값을 서로 다르게 하면 복수선택 가능하나 권장하지 않음. -->
+    </form>
+        <hr>
+    <form>
+        Your hobby? <br>
+        <input type="checkbox" name="hobby1" id="" value="독서">독서&nbsp;
+        <input type="checkbox" name="hobby2" id="" value="영화감상">영화감상&nbsp;
+        <input type="checkbox" name="hobby3" id="" value="축구">축구<br>
+        <button type="submit">submit</button>
+        <!-- input type="submit"은 잘 안씀. 이유 : 가독성이 떨어짐
+             대신 button의 submit기능을 사용.
+             마찬가지로 disabled가능. 
+             readonly를 해도 선택은 가능.
+             대신 기본적으로 선택되게 하는 기능인 checked가 있음.-->
+    </form>
+</body>
+</html>

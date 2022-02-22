@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form(Files)</title>
+</head>
+<body>
+    <h1><a href="../../index.html">index</a></h1>
+    <form action="" enctype="multipart/form-data" accept="IMAGE/JPG, IMAGE/PNG">
+        <label for="files">파일 첨부 : </label><br>
+            <input type="file" name="files" id="files"><br>
+            <button type="submit">submit</button>
+        <!-- 1. enctype="multipart/form-data" 속성을 적어두지 않으면
+             선택한 file의 파일명만 보내짐. 파일첨부용 속성.
+             파일은 수많은 데이터의 집합체이기 때문이 이것을 해석할 프로그램이
+             필요함.
+             2. enctype="application/x-www-form-urlencoded" 은 기본값이며
+             제출한 정보를 url에 포함해서 보낸다는 의미임.
+             3. url의 ? 뒤로오는걸 query string이라고 하며
+             약속된 문자열이라는 의미임.
+             4. 여기서 label은 아래 input과 한몸으로 묶어주며, 페이지에서
+             파일 첨부라는 글자를 눌러도 파일을 선택할 수 있음.
+             5. accept="IMAGE/JPG, IMAGE/PNG"은 이미지파일 등을 보낼때 확장자를
+             정하는 속성. 근데 어차피 server측에서도 확인함. -->
+    </form>
+</body>
+</html>
