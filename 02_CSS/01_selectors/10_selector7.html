@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li:first-child {
+            background-color: palevioletred;
+        /* ':'의 뒤에 나오는 속성은 :앞의 타겟을 설명한다. */
+        }
+        ul li:last-child {
+            background-color: peru;
+        }
+        ul li:nth-child(3) {
+            background-color: plum;
+        }
+        ol li:nth-child(2n) {
+            background-color: rosybrown;
+        /* nth-child()의 괄호 안에는 숫자가 1부터 입력 */
+        /* 하지만 n을 사용할 때, 짝수번째는 2n, 홀수번째는 2n+1로 표시 => n=0부터 시작 */
+        /* 대신 2n은 even으로, 2n+1은 odd로 대체 가능 */
+        }
+        ol li:nth-last-child(2) {
+            background-color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>구조선택자</h1>
+    <h3>태그의 위치에 따라 관계성을 파악하여 스타일링</h3>
+    <ul>
+        <li>첫번째 리스트의 첫번째 li</li>
+        <li>첫번째 리스트의 두번째 li</li>
+        <li>첫번째 리스트의 세번째 li</li>
+        <li>첫번째 리스트의 네번째 li</li>
+        <li>첫번째 리스트의 다섯번째 li</li>
+    </ul>
+    <ol>
+        <li>n = 0</li>
+        <li>n = 1</li>
+        <li>n = 2</li>
+        <li>n = 3</li>
+        <li>n = 4</li>
+        <li>n = 5</li>
+        <li>n = 6</li>
+        <li>n = 7</li>
+        <li>n = 8</li>
+        <li>n = 9</li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test::before {
+            content: '이것은';
+            font-style: italic;
+            font-size: larger;
+            font-weight: bolder;
+        }
+        .test2::after {
+            content: '은 곧 지워집니다';
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <h1>문자선택자</h1>
+    <h3>태그의 컨텐츠를 조작</h3>
+    <div>
+        <p>첫번째 문장</p>
+        <p class="test">두번째 문장</p>
+        <p class="test">세번째 문장</p>
+        <p class="test2">네번째 문장</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            target: _blank;
+        }
+        a:link {
+            text-decoration: none;
+            font-size: 150%;
+            color: black;
+        }
+        a:hover {
+            text-decoration: underline;
+            background-color: black;
+            color: white;
+            font-size: 200%;
+        }
+        a:active {
+            text-decoration: none;
+            font-size: 150;
+            color: burlywood;
+        }
+        a:visited {
+            text-decoration: line-through;
+            background-color: cornflowerblue;
+            font-size: 100%;
+            color: darkgoldenrod;
+            /* visited는 hover와 중복가능성 있음 */
+            /* 그리고 개인정보 보호를 위해 사용가능한 style이 제한적임 */
+        }
+    </style>
+</head>
+<body>
+    <h1>pseudo-class/elements</h1>
+    <h3>의미,의도,추측,가정 등의 상황을 고려하여 선택</h3>
+    <h4 id="up">
+        <a href="https://www.naver.com" target="_blank">네이버</a>
+    </h4>
+    <h4>
+        <a href="https://www.daum.net" target="_blank">다음</a>   
+    </h4>
+    <h4>
+        <a href="https://www.nate.com" target="_blank">네이트</a>
+    </h4>
+</body>
+</html>

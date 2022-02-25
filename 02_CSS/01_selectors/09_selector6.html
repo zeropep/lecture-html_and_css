@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type=radio]:checked {
+            width: 50px;
+        }
+        input[type=checkbox]:checked {
+            width: 50px;
+        }
+        #email:focus {
+            background-color: mediumslateblue;
+        }
+        :disabled {
+            background-color: mediumturquoise;
+        }
+        #pwd:enabled {
+            background-color: olive;
+        }
+    </style>
+</head>
+<body>
+    <h1>특정 상태를 가정하여 스타일링</h1>
+    <form>
+        Blood Type? <br>
+        <input type="radio" name="bloodType" id="" value="A" checked>A&nbsp;
+        <input type="radio" name="bloodType" id="" value="B">B&nbsp;
+        <input type="radio" name="bloodType" id="" value="O">O&nbsp;
+        <input type="radio" name="bloodType" id="" value="AB">AB<br>
+        <input type="submit" value="Submit">
+    </form>
+        <hr>
+    <form>
+        Your hobby? <br>
+        <input type="checkbox" name="hobby1" id="" value="독서">독서&nbsp;
+        <input type="checkbox" name="hobby2" id="" value="영화감상">영화감상&nbsp;
+        <input type="checkbox" name="hobby3" id="" value="축구" checked>축구<br>
+        <button type="submit">submit</button>
+    </form>
+    <input type="email" name="" id="email">
+    <hr>
+    ID : <input type="email" name="" id="eid" disabled>
+    PW : <input type="password" name="" id="pwd">
+</body>
+</html>
