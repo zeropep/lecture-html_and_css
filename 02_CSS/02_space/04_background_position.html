@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 50%;
+            height: 200px;
+            background-color: burlywood;
+            background-image: url("../res/b.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #first {
+            width: 90%;
+            height: 900px;
+            background-color: burlywood;
+            background-image: url("../res/b.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: contain;
+            
+        }
+        /*  1. 백그라운드 크기가 이미지보다 작으면 이미지가 잘리기 때문에 
+            크기조절과 포지션이 중요하다. 
+            2. attachment는 배경이 스크롤과 상관없이 고정시킬 수 있음.
+            3. size속성의 cover는 이미지를 배경의 크기에 맞출 수 있으나
+            화질저하의 우려가 있음. 또는 x/y값 직접 지정가능.
+            4. 배경이미지 지정할때는 화면에 보이는 tag를 사용하여야 한다.
+            */
+    </style>
+</head>
+<body>
+    <div id="first"> 
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+    </div>
+</body>
+</html>

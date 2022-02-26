@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Property</title>
+    <style>
+        .relative {
+        position: relative;
+        width: 400px;
+        height: 200px;
+        border: 3px solid #73ad21;
+      }
+      .absolute {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 200px;
+        height: 100px;
+        border: 3px solid #73ad21;
+      }
+    </style>
+</head>
+<body>
+    <h1>Position</h1>
+    <ul>
+        <li>fixed : 브라우저를 기준으로 특정 위치에 고정으로 표시</li>
+        <li>static (default) : 정상적인 흐름</li>
+        <li>relative : 원래 위치로부터 상대적인 요소(element)</li>
+        <li>absolute : 해당 요소를 감싸고 있는 부모요소가 relative일떄,<br>
+            그 부모요소를 기준으로 정한 수치만큼 떨어져 배치<br>
+            (부모요소가 없다면 body가 기준)
+        </li>
+    </ul>
+    <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+    <div class="relative">This div element has position: relative;
+        <div class="absolute">This div element has position: absolute;</div>
+      </div>
+</body>
+</html>

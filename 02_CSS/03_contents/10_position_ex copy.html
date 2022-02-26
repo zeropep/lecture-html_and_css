@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+        .container {
+            border: 1px solid black;
+            position: relative;
+            width: 500px;
+            height: 500px;
+            top: 10px;
+            left: 20px;
+        }
+        .red {
+            background-color: red;
+            top: 80px;
+            left: 80px;
+        }
+        .green {
+            background-color: green;
+            top: 160px;
+            left: 160px;
+        }
+        .blue {
+            background-color: blue;
+            top: 240px;
+            left: 240px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="red"></div>
+        <div class="green"></div>
+        <div class="blue"></div>
+    </div>
+    <!-- div>div>div 의 방식은 위의 방식보다 사용빈도가 적음.
+         또한 relative의 속성을 가지기 때문에 z-index가 불가능.
+         css는 위의 방식보다 더 편하지만, html이 기준이기 때문에
+         html의 방식에 맞춰간다고 생각. -->
+</body>
+</html>

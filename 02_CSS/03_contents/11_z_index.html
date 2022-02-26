@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+        .container {
+            border: 1px solid black;
+            position: relative;
+            width: 500px;
+            height: 500px;
+            top: 10px;
+            left: 20px;
+        }
+        .red {
+            background-color: red;
+            top: 80px;
+            left: 80px;
+            z-index: 100;
+        }
+        .green {
+            background-color: green;
+            top: 160px;
+            left: 160px;
+            z-index: 50;
+        }
+        .blue {
+            background-color: blue;
+            top: 240px;
+            left: 240px;
+            z-index: 0;
+        }
+        .fixed {
+            position: fixed;
+            width: 200px;
+            height: 100px;
+        }
+        #f1 {
+            background-color: blueviolet;
+            bottom: 30px;
+            right: 30px;
+            z-index: 50;
+        }
+        #f2 {
+            background-color: burlywood;
+            bottom: 6px;
+            right: 60px;
+            z-index: 100;
+        }
+        /* z-index
+            1. 값은 보통 1~100을 사용
+            2. 단위는 일반적으로 10단위
+            3. 수가 높을수록 사용자가 보기에 가장 높이 있다고 느껴짐.
+            4. 가장 하단 값을 0 또는 -1 사용
+            5. position이 absolute or fixed일 때에만 작동.
+            6. relative끼리는 불가능
+            7. 서로 같은 위치의 요소들간의 상관관계를 정함.
+            8. 부모자식 관계의 태그에서는 의미가 없음 */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="red"></div>
+        <div class="green"></div>
+        <div class="blue"></div>
+    </div>
+    <hr>
+    <div class="fixed" id="f1"></div>
+    <div class="fixed" id="f2"></div>
+</body>
+</html>

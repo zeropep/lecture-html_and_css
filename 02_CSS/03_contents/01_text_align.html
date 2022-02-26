@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div, p {
+            width: 300px;
+            border: 1px solid black;
+            text-align: justify;
+        }
+        #a {
+            text-align: left;
+        }
+        #b {
+            text-align: center;
+        }
+        #c {
+            text-align: right;
+        }
+        #va {
+            width: 50%;
+            height: 300px;
+            border: 1px solid black;
+            line-height: 300px;
+            text-align: center;
+        }
+        #sp {
+            vertical-align: middle;
+        }
+        /*  굳이 div와 span의 속성을 나눠놓은 이유는 객체적인 속성을 부여하기 위함.
+        #sp에 속성을 다 부여해도 형태는 비슷하나, 또다른 객체가 들어오게 된다면
+        그에대한 css를 다시 부여해야 함.
+        그래서 필요한 속성만을 주기위해서 저런식으로 작성. */
+        #pd {
+            width: 50%;
+            height: 300px;
+            padding-top: 230px;
+            padding-bottom: 0px;
+        }
+        /*  padding으로는 전체 크기에 영향을 주기 때문에 vertical-align을
+            잡지 않는다. */
+    </style>
+</head>
+<body>
+    <h3 id="a">좌측정렬</h3>
+    <h3 id="b">가운데정렬</h3>
+    <h3 id="c">우측정렬</h3>
+    <div>
+        <p>
+            center alignmentdf dfd fd fdfasdfasdf sadfasdfasd fasdf asdfasdfsd fsd
+        </p>
+    </div>
+    <hr>
+    <h1>text vertical align</h1>
+    <div id="va">
+        <span id="sp">text vertical align</span>
+    </div>
+    <hr>
+    <div id="pd">
+        <span>using padding to align vertical </span>
+    </div>
+    <!-- text align: center는 타겟이 가지고 있는 공간에서의 중간을 말한다.
+         span tag와 같이 inline형태면 공간이 없기 때문에 center로 갈 수 없다.
+         justify :  정해진 width값에 맞춰 텍스트 정렬(양쪽정렬)
+         특수한 경우에 사용 ex) 신문 기사란.. -->
+    <!-- vertical align은 수평보다 더 복잡한 개념임.
+         마찬가지로 위아래로 움직일 수 있는 space가 필요함
+         높이를 계산하는데 있어서 tag들 사이의 padding 및 margin값도 고려해야 함.
+         text의 위아래로 padding을 줄 수 있으나 계산식이 복잡해 짐.
+         그래서 text의 여유 공간을 원하는 높이까지 올린다음에 align하는 방식을 사용.
+          -->
+</body>
+</html>

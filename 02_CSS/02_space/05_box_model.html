@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        div {
+            width: 300px;
+            height: 150px;
+            border: 1px solid black;
+            padding: 24px 49px;
+        }
+        p {
+            width: 200px;
+            height: 150px;
+            border: 1px solid chocolate;
+            padding: 24px 49px;
+        }
+        span {
+            width: 200px;
+            height: 150px;
+            border: 1px solid darkgreen;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>width: 400px; height: 200px</div>
+    <p>width: 300px; height: 200px</p>
+    <span>box-sizing : border-box</span>
+    <!-- box-model
+         1. 각 컨텐츠는 margin-border-padding-content의 요소를 가진다.
+         2. width/height속성은 위의 m-b-p 값을 포함하지않은 content의 크기를 말한다.
+         3. 이 때 모든 값을 고려해야하는 불편함이 있어서 box-sizing 속성으로
+         border/padding/content를 포함 한 값을 정하기도 한다. -->
+    <!-- margin
+         1. 상하좌우 설정 가능
+         2. auto : 상하/좌우 를 같은 값으로 맞춤
+         3. inherit : 부모태그의 margin을 그대로 가져옴. -->
+    <!-- padding
+         1. border와 content사이의 값 -->
+    <!-- width
+         1. max-width : 일정 크기이상 커지지 않게 함. 속성으로써 존재.
+         2. min-width : 
+         3. 위의 두개는 반대되는 개념이 아님. -->
+</body>
+</html>

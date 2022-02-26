@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer {
+            width: 90%;
+            height: 90%;
+            background-image: url("../res/b.jpg");
+            background-repeat: no-repeat;
+        }
+        div {
+            width: 400px;
+            height: 200px;
+            margin-bottom: 50px;
+        }
+        body div:first-child {
+            border: 1px solid black;
+            background-color: blue;
+            opacity: 0.5;
+        }
+        body div:nth-child(2) {
+            border: 1px solid black;
+            background-color: rgba(0, 0, 255, 0.5);
+        }
+        #back {
+            background-image: url("../res/b.jpg");
+        }
+        ul li:last-child {
+            background-color: blueviolet;
+        }
+    </style>
+    <!-- 1. :last-child가 안먹는 이유는 특정한 순서가 있어야하기 때문일까?
+         li 또는 ol같이 리스트에만 먹히는건가? 
+         =>확인결과 list류에는 적용이 되는걸로 보아 프로그램이 
+         순서를 인식할 수 있어야할거같다.
+         2. background-image는 img를 원하는 크기로 re-size하지않고,
+         좌상단을 기준으로 크기만큼 잘라버린다.
+         3. 대신 유저가 우클릭으로 사진을 다운받을 수 없음.
+         4. 이미지와 색상이 중복되면 이미지가 우선순위를 갖음
+         5. background-reat : repeat -x 는 x축으로 반복.
+         6. 배경이미지가 붙거나 잘리는 위치를 변경가능. 기본9곳 혹은 사용자설정 -->
+</head>
+<body>
+    <div id="outer">
+      <div>투명처리</div>
+      <div>배경 투명도 조절</div>
+      <div id="back"></div>
+      <div id="back2">
+          <img src="../res/b.jpg" alt="" width="400px" height="200px">
+    </div>
+</div>
+</body>
+</html>

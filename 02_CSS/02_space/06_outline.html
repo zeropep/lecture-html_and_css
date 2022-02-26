@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1, li{
+            display: inline;
+        }
+        a, span {
+            display: block;
+        }
+        ul li:nth-child(4) {
+            display: none;
+        }
+        ul li:first-child {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>this is a heading</h1>
+        <a>this is a a</a>
+        <span>this is a span</span>
+    <h1>this is a heading 2</h1>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>e</li>
+    </ul>
+    <!-- outline
+         1. outline은 border바깥으로 margin영역과 겹치는 부분에 생성되며,
+         실제적으로 넓이를 가지지 않기 때문에 content의 크기에 영향을
+         미치지 않는다. 그저 margin위에 떠있는 것처럼 생각하면 됨. 
+         2. outline offset은 border와 outline의 거리를 조절함. -->
+    <!-- display
+         1. display는 각 개체의 inline level과 block level을 설정한다.
+         2. "none" value는 그 개체를 보이지 않게 할 뿐만 아니라 그 객체가
+         가지고 있는 공간까지 지운다.
+         3. "inline-block"는 객체를 inline model로 만들지만 block model처럼
+         그 아래공간까지 차지하게 된다.(높이값을 가질 수 있다는 의미임.)-->
+</body>
+</html>

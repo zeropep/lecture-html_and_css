@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* border: 1px solid black; */
+            width: 100px;
+            height: 80px;
+        }
+        .l {
+            float: left;
+        }
+        .r {
+            float: right;
+        }
+        .c {
+            float: left;
+        }
+        .b {
+            float: right;
+        }
+        .both {
+            clear: both;
+        }
+        .container {
+            width: 100%;
+        }
+        .aa {
+            width: 100%;
+            height: 100px;
+            background-color: blanchedalmond;
+        }
+        .bb {
+            float: left;
+            width: 30%;
+            height: 200px;
+            background-color: blueviolet;
+        }
+        .cc {
+            float: right;
+            width: 70%;
+            height: 200px;
+            background-color: cadetblue;
+        }
+        .dd {
+            clear: both;
+            width: 100%;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="l">Left</div>
+    <div class="r">Right</div>
+    <div class="c">Center</div>
+    <div class="b">Bottom</div>
+    <div class="both">clear</div>
+    <hr>
+    <div class="container">
+        <div class="aa q">asdfadf</div>
+        <div class="bb q">asdfasdf</div>
+        <div class="cc q">asdfasdf</div>
+        <div class="dd q">asdfadf</div>
+    </div>
+    <!-- 1. max-width: 반응형 웹을 만들 때, 기준 값 이상 커지지 않게 둠.
+         2. margin: auto
+         요소간의 경계를 자동으로 잡아줌. 실제적으로는 
+         block level의 가운데 정렬 효과를 얻음.
+         ex) div tag
+         3. float속성
+         원하는 타겟을 마치 띄워진것 처럼 만들어 서로다른 두 객체를
+         겹칠 수 있게 만듦. 단 자신의 속성은 가지고있음.
+         float을 쓰게되면 block도 inline 처럼!! 보여진다. 
+         서로의 영역을 침범할 수 있다는 의미임. 
+         l/r/c/만 float를 주게되면 b의 div는 투명판의 존재라서 
+         left의 위치로 빨려들어가고 b의 text만 아래에 남게 되는데,
+         이때 b의 div를 다시 가져오기 위해서는 clear: both를 지정
+         해주어야 한다.-->
+</body>
+</html>
