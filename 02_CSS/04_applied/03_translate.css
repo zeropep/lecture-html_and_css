@@ -1,0 +1,49 @@
+body {
+    background-color: lightseagreen;
+    text-align: center;
+}
+.main {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f2f2f2;
+    width: 300px;
+    height: 224px;
+    border-radius: 10px;
+}
+.userName {
+    width: 260px;
+    margin: 20px 20px 10px 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 0px solid #f2f2f2;
+}
+.pwd {
+    width: 260px;
+    margin: 0px 20px 10px 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 0px solid #f2f2f2;
+}
+.btn {
+    width: 260px;
+    margin: 0px 20px 30px 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 0px solid #f2f2f2;
+    background-color: lightseagreen;
+    color: white;
+}
+.forget {
+    padding: 0;
+    margin-bottom: 20px;
+}
+a {
+    color: lightslategrey;
+    font-size: 0.5em;
+    margin-bottom: 20px;
+}

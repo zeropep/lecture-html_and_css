@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="" />
+    <title>layout style</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container div {
+            padding: 20px;
+        }
+        .w25 {
+            float: left;
+            width: 25%;
+            background-color: aqua;
+            height: 100vh;
+        }
+        .w75 {
+            float: left;
+            width: 75%;
+            background-color: blanchedalmond;
+            height: 100vh;
+        }
+        ol {
+            border: 1px solid black;
+            font-size: 2em;
+            margin: 0;
+        }
+        /* margin/padding: 0은 *이나 body에 넣지만, *에 넣을경우 객체나 태그가 가지고있는 기본 m/p도 없어져
+           style하는데 애로사항이 발생할 수 있음. */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="w25">컨텐츠의 구성이 화면 크기에 어떻게 영향을 받을것인가?</div>
+      <div class="w75">
+          <ol>
+              <li>화면의 일부 파트의 수직/수평 분할은 항상 컨테이너 개념을 사용</li>
+              <li>분할 된 영역의 컨테이너를 가르키는 클래스 이름을 체계적으로 작명</li>
+          </ol>
+      </div>
+    </div>
+  </body>
+</html>

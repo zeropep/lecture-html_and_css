@@ -1,0 +1,281 @@
+/* 768px 미만 일때 스타일 */
+body {
+    margin: 0;
+}
+div {
+    width: 100%;
+}
+#nav {
+    height: 60px;
+    background-color: midnightblue;
+}
+#nav span {
+    display: inline-block;
+    color: #fff;
+    line-height: 60px;
+    vertical-align: middle;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0px 0px 0px 20px;
+}
+.bi-main {
+    background-image: url(1.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+}
+.dsc-main {
+    height: 300px;
+}
+.container {
+    box-sizing: border-box;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.dsc-main h4 {
+    margin: 0px 0px 10px 0px;
+    font-size: 16px;
+    color: #4a4a4a;
+}
+.dsc-main h3 {
+    margin: 0px 0px 30px 0px;
+    font-size: 20px;
+    color: #1b1b1b;
+}
+.container span {
+    font-size: 16px;
+    color: #7a7a7a;
+}
+.img1 {
+    background-image: url(3.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 700px;
+}
+.img2 {
+    background-image: url(2.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 400px;
+
+}
+.img2 > span {
+    border: 4px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 9px 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.img3 {
+    background-image: url(4.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 400px;
+}
+#footer {
+    clear: both;
+}
+@media screen and (min-width: 768px) {
+    /* 1024 ~ 768px 일때 스타일 */
+    body {
+        margin: 0;
+    }
+    div {
+        width: 100%;
+    }
+    #nav {
+        height: 60px;
+        background-color: midnightblue;
+    }
+    #nav span {
+        display: inline-block;
+        color: #fff;
+        line-height: 60px;
+        vertical-align: middle;
+        font-size: 2em;
+        font-weight: bold;
+        margin: 0px 0px 0px 20px;
+    }
+    .bi-main {
+        background-image: url(1.jpg);
+        background-size: cover;
+        background-position: center center;
+        height: 800px;
+    }
+    .dsc-main {
+        height: 300px;
+    }
+    .container {
+        box-sizing: border-box;
+        position: relative;
+        top: 50%;
+        transform: translate(0, -50%);
+        padding-left: 65px;
+        padding-right: 65px;
+    }
+    .dsc-main h4 {
+        margin: 0px 0px 10px 0px;
+        font-size: 16px;
+        color: #4a4a4a;
+    }
+    .dsc-main h3 {
+        margin: 0px 0px 30px 0px;
+        font-size: 20px;
+        color: #1b1b1b;
+    }
+    .container span {
+        font-size: 16px;
+        color: #7a7a7a;
+    }
+    .img1 {
+        float: left;
+        width: 50%;
+        background-image: url(3.jpg);
+        background-size: cover;
+        background-position: center center;
+        height: 500px;
+    }
+    .img2 {
+        float: right;
+        width: 50%;
+        background-image: url(2.jpg);
+        background-size: cover;
+        background-position: center center;
+        height: 250px;
+    
+    }
+    .img2 > span {
+        border: 4px solid #fff;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 9px 40px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+    }
+    .img3 {
+        float: right;
+        width: 50%;
+        background-image: url(4.jpg);
+        background-size: cover;
+        background-position: center center;
+        height: 250px;
+    }
+    #footer {
+        clear: both;
+    }
+}
+@media screen and (min-width: 1024px) {
+    /* 1024px 이상일 때 스타일 */
+    body {
+        margin: 0;
+    }
+    div {
+        width: 100%;
+    }
+    #nav {
+        height: 60px;
+        background-color: midnightblue;
+    }
+    #nav span {
+        display: inline-block;
+        color: #fff;
+        line-height: 60px;
+        vertical-align: middle;
+        font-size: 2em;
+        font-weight: bold;
+        margin: 0px 0px 0px 20px;
+    }
+    .bi-main {
+        float: left;
+        width: 50%;
+        background-image: url(1.jpg);
+        background-size: cover;
+        background-position: center center;
+        height: 660px;
+    }
+    .dsc-main {
+        float: right;
+        width: 50%;
+        height: 330px;
+    }
+    .container {
+        box-sizing: border-box;
+        position: relative;
+        top: 50%;
+        transform: translate(0, -50%);
+        padding-left: 65px;
+        padding-right: 65px;
+    }
+    .dsc-main h4 {
+        margin: 0px 0px 10px 0px;
+        font-size: 16px;
+        color: #4a4a4a;
+    }
+    .dsc-main h3 {
+        margin: 0px 0px 30px 0px;
+        font-size: 20px;
+        color: #1b1b1b;
+    }
+    .container span {
+        font-size: 16px;
+        color: #7a7a7a;
+    }
+    .img1 {
+        float: left;
+        width: 25%;
+        background-image: url(3.jpg);
+        background-size: cover;
+        background-position: center center;
+        height: 330px;
+    }
+    .img2 {
+        float: right;
+        width: 25%;
+        background-image: url(2.jpg);
+        background-size: cover;
+        background-position: center center;
+        height: 165px;
+    
+    }
+    .img2 > span {
+        border: 4px solid #fff;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 9px 40px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+    }
+    .img3 {
+        float: right;
+        width: 25%;
+        background-image: url(4.jpg);
+        background-size: cover;
+        background-position: center center;
+        height: 165px;
+    }
+    #footer {
+        clear: both;
+    }
+}

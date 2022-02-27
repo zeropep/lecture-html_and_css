@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text overflow</title>
+    <style>
+        h1, p {
+            width: 30%;
+        }
+        .ellipsis {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /* 1. white-space: nowrap
+            자동 개행이 되지않고 모든게 한줄로 표시됨.
+           2. overflow: hidden
+            공간에 표시되지 못한 글자를 보이지 않게 처리함.
+           3. text-overflow: ellipsis 
+            공간이 글자에 비해 부족할 때, 표시되지 못한 글자가 있음을 ...으로 알려줌. */
+    </style>
+</head>
+<body>
+    <h1 class="ellipsis">Text overflowText overflowText overflowText overflowText overflowText overflow</h1>
+    <p class="ellipsis">
+        Text overflowText overflowText overflowText overflowText overflowText overflow
+        Text overflowText overflowText overflowText overflowText overflowText overflow
+    </p>
+</body>
+</html>
