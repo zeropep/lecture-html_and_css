@@ -1,0 +1,18 @@
+공통적으로 적용할 css는 개별적으로 적용할 내용을 포함시키지 않는다
+개별 파일에 들어갈 css가 너무 많으면 따로 css파일을 만들어야 한다
+js로 css를 하게되면 html기반이기 때문에 inline style로 적용됨
+단일(simple), 결합(combinator), 의도(pseudo-class/elements), 속성(attribute)선택자
+* 는 모든 태그를 지칭하며 정식 이름은 Asterisk
+div + p : div다음으로 오는 p태그(1개)
+div ~ p : div다음으로 오는 모든 p태그(여러개)
+regular expression 정규 문자열
+~ : 그 문자가 포함되어있는지
+| : 그 문자이거나 그 문자로 시작하는지
+^ : 그 문자로 시작하는지
+$ : 그 문자로 끝나는지
+* : 그 문자가 중간에 있는지
+ex) a[href^="https"]
+
+---------------------------------------------------
+
+text의 color속성은 앞에 접두사가 붙지 않는다. => p { color: red;}

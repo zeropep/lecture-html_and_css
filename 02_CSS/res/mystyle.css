@@ -1,0 +1,14 @@
+h1 {
+    font-size: 3em;
+}
+/* 1em = 16px */
+p {
+    background-color: black;
+    color: white;
+}
+div {
+    border: 3px dotted orange;
+}
+h2, h3 {
+
+}

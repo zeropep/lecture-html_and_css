@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="ex.css">
+<title></title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand " href="#">LandScape</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav text-end me-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">튜터 신청</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">수업 목록</a>
+                </li>   
+              </ul>
+              <span class="navbar-text" style="margin: 0; padding: 0;">
+                <ul class="navbar-nav text-end me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">회원 가입</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">로그인</a>
+                  </li>   
+                </ul>
+              </span>
+            </div>
+        </div>  
+      </nav>
+      <br>
+      <!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+    
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item item1 active">
+        <img src="img/1.jpg" alt="Los Angeles" class="d-block">
+        <div class="carousel-caption caption-p">
+          <h3>Mountain cabin</h3>
+          <p>Have a special day with beautiful scenery!</p>
+          <a href="#" class="btn btn-primary">수업 찾기</a>
+        </div>
+      </div>
+      <div class="carousel-item item1">
+        <img src="img/3.jpg" alt="Chicago" class="d-block">
+        <div class="carousel-caption caption-p">
+          <h3>Beach</h3>
+          <p>Thank you, Chicago!</p>
+          <a href="#" class="btn btn-primary">수업 찾기</a>
+        </div> 
+      </div>
+      <div class="carousel-item item1">
+        <img src="img/4.jpg" alt="New York" class="d-block">
+        <div class="carousel-caption caption-p">
+          <h3>New York</h3>
+          <p>We love the Big Apple!</p>
+          <a href="#" class="btn btn-primary">수업 찾기</a>
+        </div>  
+      </div>
+    </div>
+    
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div> 
+
+    <!-- alert messages -->
+  <div class="container alert-container">
+    <div class="alert alert-warning alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>Enroll Now!</strong> Share your wonderful picture work.
+        </div>
+  
+      <!-- series of cards -->
+    <div class="container row">
+      <div class="card" style="width:400px">
+        <img class="card-img-top card1" src="img/2.jpg" alt="" style="width:100%">
+        <div class="card-body">
+          <h4 class="card-title">John Doe</h4>
+          <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+          <a href="#" class="btn btn-primary">See Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/bootstrap.min.js"></script>
+  </body>
+  </html>
