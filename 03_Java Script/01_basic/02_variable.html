@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title>variables</title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>variable : check your developer console.</h1>
+    <ul>
+        <li>특정한 자료값을 임시적으로 저장하는 위치, 장소, 개념, 코드, 상태</li>
+        <li>변하는 값을 주로 다룬다고 해서 변수라고 한다.</li>
+        <li>JS에서는 var, let 키워드를 변수 선언할 때 사용함</li>
+        <li>ES6 부터는 let 사용을 권장함</li>
+    </ul>
+<script>
+    // 변수의 선언
+    let 변수명;
+    let current_my_age; // snake notation
+    let currentMyAge; // camel notation 
+    // 대소문자 인식함, 숫자로 시작 못함, 특수문자는 _(under score)와 $(dollor)만 허용
+    // 하지만 $는 문법상 자주 사용되는 특수문자이므로 사용을 권장하지 않음.
+
+    // 초기화 : 선언한 변수의 최초의 값을 넣어주는 것.
+    currentMyAge = 20;
+    // currentMyAge라는 현재는 값이 정해지지 않은 어떤 변수자리에 20이라는 값을 넣었다 라고 이해해야 함.
+
+    // 선언과 초기화를 동시에 하기.
+    let yourAge = 25;
+
+    /* 변수를 사용하는 권장 사항들 (중요!)
+    1. 의미를 바로 알 수 있는 직관적인 변수명 사용. 
+    2. 변수명은 문자를 중심으로 구성하고 가급적 숫자는 반복되는 경우에 사용.
+    3. 변수는 고정값이 될 가능성이 있으면 충분히 고민 후 상수(const)로 대입시킨다.
+    4. 변수는 어느 시점에 상태가 변했는지가 중요함. 위의 상태가 어땠는지에 상관없이 가장 마지막의 상태가 저장됨.
+    5. 변수의 값을 변화시킬 때는 let을 쓰지 않고 변수명만 쓴다. */
+
+    let myName = "jungyu";
+    let myAge = 28;
+    let myAdress = "Dongdaemoon-gu";
+    let myMajor = "maritime";
+    let myHobby = "singing";
+    let mySpecialty = "singing";
+    let myEmail = "devjun1224@gmail.com";
+
+    console.log("나이:", myAge);
+    console.log("나이" + myAge);
+
+    // + 는 문자를 연결하면 연결자, 수를 연결하면 연산자로 사용됨.
+
+    // 커피숍의 메뉴를 변수로 선언하기
+    let americanoPrice = 4000;
+    let latteKcal = 5000;
+    let coldbrewRecipe = '원액';
+    let banilaLatteSize = 5500;
+    let americanoInfo;
+
+    console.log(americanoPrice);
+    console.log(americanoPrice + latteKcal);
+    console.log('coldbrewRecipe:', coldbrewRecipe)
+    console.log('banilaLatteSize : ' + banilaLatteSize);
+    console.log('americanoInfo', americanoInfo);
+
+    // 변수의 이름과 값을 지정할 때, 정확히 어떤 값을 사용할 것인지 규칙등을 잘 정해야 한다.
+    // 변수가 커피 하나일때엔, 값이 가격이거나 칼로리어도 명확하지만, 두개 이상의 속성을 지정
+    // 할 때엔 그 변수명에 의미를 명확히 해주어야 한다.
+
+    // 변수를 선언만 해두고 값을 부여하지 않았다면 undefined속성이 나온다.(언어마다 조금씩 다름)
+    
+    // 변수의 사용 목적
+    // 특정한 값이나 상태를 추후에 계속해서 사용할 가능성이 있다면 그 값을 쉽게 접근하여
+    // 연산(활용)을 이어갈 수 있도록 하기 위함.
+
+    // super global variable 변수 선언 없이도 사용할 수 있는, 공통적으로 쓰이는 변수이나
+    // 사용하지 않는 것을 권장함.
+    // 여러개의 변수선언 및 초기화를 한 줄에 넣을 수 있지만 헷갈릴 수 있으니 사용자제.
+
+    // let
+    // 1. 재선언 불가
+    // 2. 사용하기전 선언이 되어있어야 함
+
+    // const
+    // 상수의 선언. 기본적으로 let과 비슷함
+    // let으로 선언된 변수명과 같은 변수명 사용 불가
+    // 최초 선언 및 초기화 이후 값을 재할당 할 수 없음.
+    let num = 1000;
+    const num = 1000;
+    console.log(num);
+    console.log(num);
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+</head>
+<body>
+    <h1>근로소득세</h1>
+    <ul>
+        <li>총 근로소득(연봉)</li>
+        <li>기본공제</li>
+        <li>과제표준 = 총 근로소득 - 기본공제</li>
+        <li>과세표준에 적용된 세율을 계산해보자</li>
+    </ul>
+    총 근로소득 : <input type="number" name="" id="salary"><br>
+    기본 공제 : <input type="number" name="" id="dect"><br>
+    <button type="button" id="btn">submit</button><br>
+<script>
+    const submit = document.getElementById("btn");
+    
+    function tax1(a, b) {
+        return (a-b) * 0.06
+    }
+    function tax2(a, b) {
+        return (a-b) * 0.15 - 1080000
+    }
+    function tax3(a, b) {
+        return (a-b) * 0.24 - 5220000
+    }
+    function tax4(a, b) {
+        return (a-b) * 0.35 - 14900000
+    }
+    function tax5(a, b) {
+        return (a-b) * 0.38 - 19400000
+    }
+    function tax6(a, b) {
+        return (a-b) * 0.40 - 25400000
+    }
+    function tax7(a, b) {
+        return (a-b) * 0.42 - 35400000
+    }
+    function tax8(a, b) {
+        return (a-b) * 0.45 - 65400000
+    }
+
+    function taxCal(params) {
+        const sal = parseInt(document.getElementById("salary").value);
+        const dec = parseInt(document.getElementById("dect").value);
+        const stan = sal - dec;
+
+        return stan <= 12000000 ? console.log(tax1(sal, dec))
+            : stan > 12000000 && stan <= 46000000 ? console.log(tax2(sal, dec))
+            : stan > 46000000 && stan <= 88000000 ? console.log(tax3(sal, dec))
+            : stan > 88000000 && stan <= 150000000 ? console.log(tax4(sal, dec))
+            : stan > 150000000 && stan <= 300000000 ? console.log(tax5(sal, dec))
+            : stan > 300000000 && stan <= 500000000 ? console.log(tax6(sal, dec))
+            : stan > 500000000 && stan <= 1000000000 ? console.log(tax7(sal, dec))
+            : stan > 1000000000 ? console.log(tax8(sal, dec))
+            : console.log(`입력란을 다시 써주세요`);
+        
+    }
+
+    submit.addEventListener("click", taxCal)
+</script>
+</body>
+</html>

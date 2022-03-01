@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+</head>
+<body>
+    <h1>반복문 while(boolean)</h1>
+    <ul>
+        <li>while의 구조는 시작값, 반복유지 조건, 실행영역으로 이루어짐</li>
+        <li>반복유지 조건은 if문의 조건과 같은 boolean 타입으로 구성</li>
+        <li>while은 반복의 횟수를 정확하게 정하지 못하거나 정할 필요가 없을 때 사용</li>
+        <li>do while과의 차이는 while은 조건부 실행, do while은 선실행 후 조건부합 검사</li>
+        <li>조건이 true일 때 계속 반복, false이면 반복을 멈춤(실행영역을 벗어남)</li>
+    </ul>
+    <h3>구구단</h3>
+    <input type="number" name="" id="num0"> 단 알아보기<br>
+    <button type="button" id="btn">submit</button><br>
+<script>
+    let i = 0;
+    // print 1 to 10
+    // while (i < 10) {
+    //     console.log(++i);
+    // }
+
+    // let j = 1;
+    // // print 1 to 10
+    // while (j < 11) {
+    //     console.log(j++);
+    // }
+    // 내가 반복은 몇 번 할 것인가를 생각(사실 이런건 for 문이 더 잘맞음)
+
+/*     let flag = true;
+    let sum = 0;
+    let num = 1;
+    while (flag) {
+        console.log(num);
+        sum += num;
+        if(sum >= 1000) {
+            flag = false;
+        }
+        console.log(sum);
+        num++;
+    }
+
+    do {
+        sum += num;
+        if (sum > 2000) {
+            flag = false;
+        }
+        console.log(num, ">", sum);
+        num++;
+    } while (flag);
+ */
+    // do while문은 일단 초회 실행은 반드시 발생하고 이후 조건을 검사
+    // 위에서 flag가 이미 false인 상태로 내려왔지만 최초구문은 실행되었음.
+    // 무한루프에 빠지는 것을 방지하기 위해 debugger를 설치.
+
+
+    // 숫자를 입력하면 그 숫자의 2 ~ 9까지 곱한 결과를 출력하기
+    const submit = document.getElementById("btn");
+
+    function mul() {
+        const num0 = parseInt(document.getElementById("num0").value);
+        let a = 2;
+        
+        while (a < 10) {
+            console.log(`${num0} * ${a} = ${num0 * a}`);
+            a++;
+        } 
+    }
+
+    submit.addEventListener("click", mul)
+</script>
+</body>
+</html>

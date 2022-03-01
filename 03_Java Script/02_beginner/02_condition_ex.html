@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>가위바위보</h1>
+    <h3>가위 바위 보 중에 하나를 입력하세요</h3>
+    <input type="text" name="" id="choice">
+    <button type="button" id="btn">submit</button>
+<script>
+    const button = document.getElementById("btn");
+    
+    function runRandom() {
+        const choice = document.getElementById("choice").value;
+
+        const comChoice = (Math.floor(Math.random()*3) + 1);
+        function computer(comNum) {
+            if (comNum == 1) {
+            return "가위"
+        } else if (comNum == 2) {
+            return "바위"
+        } else {
+            return "보"
+        }
+        }
+        const compChoice = computer(comChoice)
+
+        if (choice == "가위") {
+            if (compChoice == "가위") {
+                console.log("비겼음");
+            } else if (compChoice == "바위") {
+                console.log("졌음");
+            } else {
+                console.log("이겼음");
+            }
+        } else if (choice == "바위") {
+            if (compChoice == "가위") {
+                console.log("이겼음");
+            } else if (compChoice == "바위") {
+                console.log("비겼음");
+            } else {
+                console.log("졌음");
+            }
+        } else {
+            if (compChoice == "가위") {
+                console.log("졌음");
+            } else if (compChoice == "바위") {
+                console.log("이겼음");
+            } else {
+                console.log("비겼음");
+            }
+        }
+    }
+
+    button.addEventListener("click", runRandom)
+</script>
+</body>
+</html>

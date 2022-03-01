@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator</title>
+</head>
+<body>
+    <h1>Operator : 연산자</h1>
+    <ul>
+        <li>산술 연산자 : 사칙연산, 나머지연산, 제곱, 루트 등...</li>
+        <li>대입 연산자 : 자체 값을 연산 후 다시 대입. 재귀적 연산을 수행</li>
+        <li>비교 연산자 : 이상, 이하, 미만, 초과, 같다, 다르다 등...</li>
+        <li>논리 연산자 : and, or, not and, not or</li>
+        <li>증감 연산자 : 일정 크기를 증가 / 감소</li>
+        <li>비트 연산자 : 비트 단위로 연산</li>
+    </ul>
+<script>
+    // 사칙연산, 나머지연산
+    let num1 = 100;
+    let num2 = 5;
+    let resultAdd = num1 + num2;
+    console.log("resultAdd :", resultAdd);
+    let resultSubs = num1 - num2;
+    console.log("resultSubs :", resultSubs);
+    let resultMulti = num1 * num2;
+    console.log("resultMulti :", resultMulti);
+    let resultDiv = num1 / num2;
+    console.log("resultDiv :", resultDiv);
+    let resultMod = num1 % num2;
+    console.log("resultMod :", resultMod)
+    
+    console.log(2 ** 3); // 8
+
+    // 대입연산자 ("="도 대입연산자이다!)
+    num1 = num1 + num2;
+    console.log(num1); // 105
+    num1 = num1 + num2;
+    console.log(num1); // 110
+    num1 += num2;
+    console.log(num1); // 115
+    
+    num1 -= num2;
+    console.log(num1); // 110
+    num1 -= num2;
+    console.log(num1); // 105
+    
+    num1 *= num2;
+    console.log(num1); // 525
+
+    num1 /= num2;
+    console.log(num1); // 105
+
+    num1 **=num2;
+    console.log(num1); // 12762815625
+
+    //증감연산자
+    num1 = 100;
+    num1++; // 현재의 num1의 값은 100이다. 연산자가 숫자 뒤에 있으면 호출 이후      연산하겠다는 의미이다.
+    console.log(num1); // 101
+    num1--;
+    console.log(num1); // 100
+    ++num1; // 현재의 num1의 값은 101이다. 연산자가 숫자 앞에 있으면 호출 전에 연산이 되어있다.
+    console.log(num1); // 101
+    --num1;
+    console.log(num1); // 100
+    
+    // 비교연산자 : 연산 결과는 무조건 boolean type
+    console.log(num1 > num2); // true
+    
+    num1 = 100;
+    num2 = 100;
+    let num3 = "100";
+    console.log(num1 === num2); // true, 두 요소의 값과 타입을 동시에 같은지 비교
+    console.log(num1 == num3); // true, 두 요소의 값만 같은지 비교
+    console.log(num1 === num3); // false, 값은 같으나 타입이 다르기 때문.
+
+    // 다른 값? 다른 타입?
+    console.log(num1 !== num2); // false, 두 요소의 값과 타입을 동시에 다른지 비교
+    console.log(num1 != num3); // false, 두 요소의 값만 다른지 비교
+    console.log(num1 !== num3); // true, 값은 같고 타입이 다르기 때문.
+
+    // 논리 연산자
+    // && (and 연산자), ||(or 연산자) => true or false 리턴
+    console.log(true && true) // true
+    console.log(true && false) // false, 왼쪽이 true면 오른쪽 값 리턴
+    console.log(false && true) // false, 왼쪽이 false면 왼쪽 값 리턴
+    console.log(false && false) // false, 왼쪽이 false면 왼쪽 값 리턴
+
+    // || 연산자는 양쪽 중 한 개라도 true면 모두 true를 리턴
+    console.log(true || true) // true
+    console.log(true || false) // true, 왼쪽이 true면 왼쪽 값 리턴
+    console.log(false || true) // true, 왼쪽이 false면 오른쪽 값 리턴
+    console.log(false || false) // false, 왼쪽이 false면 오른쪽 값 리턴
+
+    // ! 연산자 : not 연산자 (부정연산자) => 결과를 반대로 리턴
+    console.log(!true); // false
+    console.log(!false); // true
+    console.log(!!!false); // true
+
+    // middle check
+    // 1. 삼각형의 넓이와 사각형의 둘레길이를 구하기
+    //    알맞는 변수이름을 사용하고 변수의 초기값은 100이하의 수를 사용.
+    let triangleHeight = 10;
+    let triandleBase = 20;
+    let triangleArea = triandleBase * triangleHeight / 2;
+    console.log(triangleArea);
+    
+    let rectangleBase = 30;
+    let rectangleHeight = 40;
+    let rectangleLength = (rectangleBase * 2) + (rectangleHeight * 2);
+    console.log(rectangleLength);
+
+    // 2. 함수를 이용한 1번 문제풀이
+    function getTriangleArea (triandleBase, triangleHeight) {
+        let triangleArea = triandleBase * triangleHeight / 2;
+    }
+    function getPerimeter (rectangleBase, rectangleHeight) {
+        console.log((rectangleBase * 2) + (rectangleHeight * 2));
+    }
+    // function의 params와 미리 선언한 변수는 그저 이름만 같을 뿐 상관관계가 없다.
+    // function 내부에 있는 요소는 밖에있는 요소와 다른 존재가 된다.
+    // params의 값은 call function시에 ()에 넣어준다.
+    // params의 값은 순서를 인식하기 때문에 주의해서 넣는다.
+    // function 내부에서 받은 값은 function 내부에서만 사용이 가능하다.
+
+    // 3. 원금, 이자율, 저축한 기간(년 기준)을 최종 받을 금액을 출력해주는 함수를 만들어보세요. 최종 받을 금액은 15.4%의 이자소득세를 차감한 금액입니다.
+    function howMuchGetMoney(money, rate, years) {
+        console.log(money * (1 + (rate / 100) * years * (1-(15.4 / 100))))
+    }
+    function howMuchGetMoney2(money, rate, years) {
+        console.log(money * ((1 + (rate / 100) / years) ** (years * 5)));
+    }
+    howMuchGetMoney(10000000, 3, 5)
+    howMuchGetMoney2(10000000, 3, 5)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>반복문 for</h1>
+    <ul>
+        <li>for 문은 standard for, for of, for in 으로 3개가 존재한다.</li>
+        <li>for (let i = 시작값; i < 조건; i++) {실행영역}</li>
+        <li>for (초기화; 조건부; 증감식) {실행영역}</li>
+    </ul>
+<script>
+    for (let i = 0; i < 10; i++) {
+        console.log(i); // 1 - 9 까지 찍힘
+        
+    }
+    for (let i = 10; i > 0; i--) {
+        console.log(i); // 9 - 1 까지 찍힘
+    }
+
+    let myName = "park";
+    for (let i = 0; i < myName.length; i++) {
+        console.log(myName[i]);
+        
+    }
+
+    // 1부터 정수 n값까지 짝수의 합
+    let n = 100;
+    let sum = 0;
+    for (let j = 0; j < n; j++) {
+        if (j % 2 == 0) {
+            sum += j;
+        }
+    }
+    console.log(sum);
+</script>
+</body>
+</html>

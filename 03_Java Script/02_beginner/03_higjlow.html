@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>high low game</h1>
+    <h3>숫자를 입력해 맞춰보세요! (1~100)</h3>
+    <input type="number" name="" id="myNum">
+    <button type="button" id="btn">submit</button>
+<script>
+    const submit = document.getElementById("btn")
+    const comNum = Math.floor(Math.random() * 100 + 1);
+    let count = 0;
+
+    function numGenerator() {
+        const tryNum = parseInt(document.getElementById("myNum").value);
+        
+        if (tryNum > comNum) {
+            console.log(`더 작은 수를 입력하세요`);
+        } else if (tryNum < comNum) {
+            console.log(`더 큰 수를 입력하세요`);
+        } else {
+            console.log(`축하합니다. 정답입니다!`);
+        }
+        // 삼항연산자(ternary operator)로 만들기
+        console.log(`${tryNum == comNum ? "정답입니다." : tryNum > comNum ? "더 작은 수를 입력하세요" : "더 큰 수를 입력하세요"}`);
+
+        // 함수화 시켜보기
+        function judge(tn) {
+            let t = parseInt(tn)
+            let c = parseInt(document.getElementById("myNum").value);
+            return t == c ? "정답입니다."
+                : t > c ? "더 작은 수를 입력하세요"
+                : "더 큰 수를 입력하세요";
+        }
+
+        count++;
+        console.log(`${count}회 클릭하셨습니다`);
+    }
+
+    submit.addEventListener("click", numGenerator);
+</script>
+</body>
+</html>

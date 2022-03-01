@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>자바스크립트 조건문</h1>
+    <ul>
+        <li>if, else if, else, switch case</li>
+        <li>조건문의 조건은 반드시 boolean 값이어야 함</li>
+        <li>조건이 true 일때 실행역역으로 이동한다.</li>
+        <li>조건문의 실행영역은 { }로 감싸져 있어야 함</li>
+        <li>선택은 택일 이므로 조건의 구조가 매우 복잡하면 수행속도에 영향을 미친다.</li>
+        <li>중첩 조건문과 다중 조건은 다른 구조이다.</li>
+    </ul>
+<script>
+    let myName = "park";
+    if (myName == "park") {
+        console.log(`My name is ${myName}`);
+    } else {
+        console.log(`One of names is empty`);
+    }
+
+    let yourName;
+    if (myName && yourName) {
+        console.log(`My name is ${myName} and your name is ${yourName}`);
+    } else {
+        console.log(`One of names is empty`);
+    }
+
+    let hisName = "kim";
+    let herName = "huh";
+    // 다중 선택지 
+    // 상위의 조건부터 실행하여 true값이 나오면 해당 실행영역을 수행.
+    // true값이 나와 실행영역을 한번 수행하면 이후의 조건은 실행하지 않음
+    if (myName && yourName) {
+        console.log(`My name is ${myName} and your name is ${yourName}`);
+    } else if (hisName && herName) {
+        console.log(`Both name are fullfilled`);
+    } else {
+        console.log(`One of names is empty`);
+    }
+
+    if (true) {
+        console.log("check - 1");
+        if (false) {
+            console.log("check - 2");
+        } else {
+            console.log("check - 3");
+            console.log("이곳은 if 안쪽에 또 if-else문을 실행한 것");
+        } 
+        console.log("check - 4");
+    }
+
+    if (true) {
+        console.log("chk1");
+        if (true) {
+            console.log("chk2");
+            if(false) {
+                console.log("no1");
+            } else if (true) {
+                console.log("chk3");
+            } else {
+                console.log("no2");
+            }
+            console.log("chk4");
+        } else {
+            console.log("no3");
+            if (true) {
+                console.log("no4");
+            } else {
+                console.log("no5");
+            }
+        }
+        console.log("chk5");
+    }
+    console.log("finish");
+</script>
+</body>
+</html>

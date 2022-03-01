@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Type</title>
+</head>
+<body>
+    <h1>Java Script Data Type</h1>
+    <ul>
+        <li>Number : 숫자 - 정수, 실수, NaN</li>
+        <li>String : 문자 - quotes로 감싸진 모든 값</li>
+        <li>Boolean : 참/거짓 - true / false</li>
+        <li>Object : 객체</li>
+        <li>Array : 배열(객체)</li>
+        <li>undefined : 미정된 값</li>
+        <li>Null : 알수없음</li>
+    </ul>
+    <h1>typeof : data type을 알고 싶을 때 사용하는 키워드</h1>
+    <h1>자바스크립트의 기본 데이터 타입: primative type</h1>
+    <ul>
+        <li>number</li>
+        <li>boolean</li>
+        <li>string(원래는 참조형 데이터 타입인데 특수하게 변형된 형태)</li>
+        <li>다른 프로그래밍 언어에서는 string은 참조형 데이터 타입</li>
+    </ul>
+    <h1>자바스크립트의 참조 데이터 타입: reference type</h1>
+    <ul>
+        <li>string</li>
+        <li>object</li>
+        <li>array</li>
+        <li>function etc...</li>
+    </ul>
+    <!--     넘버는 정수와 실수가 있다.
+    정수는 정확한 값이지만 실수는 정확한 값이 아니라 컴퓨터가 표현할 수 있는
+    최대한의 범위 내에서 나타낸다. 정확한 값을 얻기 위해서는 정수로 만들어서 계산하는
+    방식이 필요함.
+    nan 숫자 개념에 소속되어있지만, 즉 데이터 타입이 숫자이지만
+    그 의미가 숫자가 아니라는 뜻임(not a number) -->
+    <script>
+        let myName = "jun";
+        console.log(typeof 55);
+        console.log(typeof myName);
+        console.log(typeof true);
+    </script>
+</body>
+</html>

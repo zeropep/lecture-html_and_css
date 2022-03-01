@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+</head>
+<body>
+    <h1>while 연습</h1>
+    <ul>
+        <li>1~100이하의 홀수를 모두 출력한 후 그들의 합을 출력하라</li>
+        <li>임의의 숫자 2개(a, b)를 받아 a의 b제곱을 구하라</li>
+        <li>정수 n을 입력받아 n의 약수를 출력하고 총 몇개의 약수가 있는지 출력하라</li>
+        <li>
+            <ul>
+                <li>3자리 양의 정수 1개 입력받기 : s</li>
+                <li>크기가 다른 1자리 양의 정수 2개를 받기 (x, y)</li>
+                <li>s안의 x와 y의 배수 갯수 구하기</li>
+            </ul>
+        </li>
+    </ul>
+    1 : <br><button type="button" id="btn1">submit</button><br>
+    2 : <br><input type="number" name="" id="num1"><br>
+        <input type="number" name="" id="num2"><br>
+        <button type="button" id="btn2">submit</button><br>
+    3 : <br><input type="number" name="" id="num3"><br>
+        <button type="button" id="btn3">submit</button><br>
+    4 : <br><input type="number" name="" id="num4"><br>
+        <button type="button" id="btn4">submit</button><br>
+<script>
+    // 1번
+    const submit1 = document.getElementById("btn1");
+
+    function prob1() {
+        let i = 0;
+        let oddSum = 0;
+        while (i < 101) {
+            if (i % 2 == 1) {
+                console.log(`${i}`);
+                oddSum += i;
+            }
+            i++;
+        }
+        console.log(oddSum);
+    }
+    
+    submit1.addEventListener("click", prob1)
+
+    // 2번
+    const submit2 = document.getElementById("btn2");
+
+    function prob2() {
+        const a = parseInt(document.getElementById("num1").value);
+        const b = parseInt(document.getElementById("num2").value);
+        let j = 0;
+        while (j < b) {
+            j++;
+        }
+        console.log(a ** j);
+    }
+
+    
+    submit2.addEventListener("click", prob2)
+    
+    // 3번
+    const submit3 = document.getElementById("btn3");
+
+    function prob3() {
+        const c = parseInt(document.getElementById("num3").value);
+        let k = 0;
+        let m = 0;
+        while (k < c) {
+            k++;
+            if (c % k == 0) {
+                console.log(k);
+                m++;
+            }
+        }
+        console.log(`${c}의 약수의 개수는 ${m}개 입니다.`);
+    }
+
+    submit3.addEventListener("click", prob3)
+
+    // 4번
+    const submit4 = document.getElementById("btn4");
+
+    function prob4() {
+        let s = 500;
+        let x = 3;
+        let xa = 0; // x 에 곱할수
+        let y = 4;
+        let ya = 0;
+        let xya = 0;
+        while (x * xa < s) {
+            ++xa;
+        }
+        while (y * ya < s) {
+            ++ya;
+        }
+        while (x * y * xya < s) {
+            ++xya;
+        }
+        console.log(xa);
+        console.log(ya);
+        console.log(xya);
+    }
+
+    submit4.addEventListener("click", prob4)
+
+    // xa가 s의 숫자만큼 실행되고, 이것은 점근 표기법이라 한다.
+    // 알고리즘 적으로 접근하면 이 실행 횟수를 줄이는 방법이 요구됨.
+
+    // 효율성을 생각한 방식
+    // 역순 계산
+    
+    let q = 1000000;
+    let w = 16;
+    while (q > 0) {
+        if (q % w == 0) {
+            w = Math.floor(q / w);
+            break;
+        }
+        q--;
+    }
+    console.log(w);
+</script>
+</body>
+</html>

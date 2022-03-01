@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title>string method & property</title>
+
+</head>
+<body>
+    <h1>string method & property</h1>
+    <ul>
+        <li>문자는 길이 속성을 갖고 있으며 문자열.length로 알 수 있음</li>
+        <li>길이를 갖고 있다는 것은 시작과 끝이 있다는 개념으로 이해</li>
+        <li>그러므로 순서가 존재하고 그 순서를 숫자화 시킨 index라는 것이 존재</li>
+        <li>문자의 값은 불변(immutable)의 속성으로, 인덱스를 활용해 값 자체를 변화시킬 수 있음</li>
+        <li>인덱스는 0부터 시작하기 때문에 마지막 인덱스는 length -1이라는 공식이 성립한다.</li>
+        <li>인덱스를 활용한 다양한 method가 있으며, 실제 실무에서 문자관련 method가 많이 사용됨</li>
+        <li>띄어쓰기도 포함됨</li>
+    </ul>
+<script>
+    let subject = "javascript javascript is funny?";
+    console.log(subject.length); // 21
+
+    // slice(start_index, last_index + 1) => last index는 표시되지 않음
+    console.log(subject.slice(22, 31));
+    console.log(subject.slice(10, subject.length)); //끝까지 가져올때
+    console.log(subject.slice(10)); // 파라미터가 한개이면 시작점부터 끝까지
+
+    // slice(negative_sign_index) 가장 끝의 인덱스는 -1이라는 점을 이용.
+    // 혼란방지 차원에서 끝에서 몇 번째라는 개념이 아닌 이상 잘 사용하지 않음.
+    console.log(subject.slice(-10, -1));
+
+    // substring(start_index, last_index) => last_index는 표시되지않음
+    // substr(start_index, count) => count : 추출 갯수
+    // 음수 파라미터 사용가능하며, 파라미터가 1개일 때는 문자 마지막까지 추출
+
+    // replace(old_value, new_value) => 새로운 문자 생성 후 리턴한다.
+    // 동일한 값이 두 번 이상 존재할 경우, 인덱스가 빠른 문자열을 변경한다.
+    let new_subject = subject.replace("javascript", "ES6+");
+    console.log(subject);
+    console.log(new_subject);
+
+    // uppercase(), lowercase() 문자를 대문자 & 소문자로 변경된 값을 생성 후 리턴
+    // 문자열.concat("문자열",...) 문자를 연결하는 메서드 => + 라는 문자결합자와 같음.
+    let kor = "한국어"
+    let eng = "영어"
+    let chn = "중국어"
+    console.log(kor+"는 " + eng + "보다" + "쉬운 언어일까요?");
+    let new_str = eng.concat("는 ", chn, "보다", "쉬운 언어일까요?");
+    console.log(new_str);
+    console.log(`${chn}은 ${kor}보다 쉬운 언어일까요?`); // es6+ recommand
+    
+    // padStart(idx, exp), padEnd(idx, exp)
+    console.log(kor.padStart(6, "*"));
+    console.log(eng.padEnd(6, "-"));
+
+    // access
+    console.log(subject.charAt(1)); // 문자 전용 메서드
+    console.log(subject[1]); // 시퀀싱 개념이 적용된 데이터 타입에 사용가능 ex)배열
+</script>
+</body>
+</html>

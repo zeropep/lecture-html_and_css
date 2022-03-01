@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="" />
+    <title></title>
+    <style></style>
+  </head>
+  <body>
+    <h1>문자열 타입 정리</h1>
+    <ol>
+      <li>immutable : 부분 수정 불가</li>
+      <li>위치값을 의미하는 index가 존재함</li>
+      <li>관련 메서드가 많아 자주 사용되는 것 위주로 숙지</li>
+    </ol>
+    <script>
+      // indexOf("str"), lastIndexOf("str") => 문자열의 index가 몇 번인가?
+      // 문자열이 시작하는 위치의 index를 리턴
+      let title = "Javascript String Data Type is string, why not string";
+      console.log(title.indexOf("Data")); // 18
+      console.log(title.lastIndexOf("String")); // 11
+      console.log(title.slice(title.indexOf(",") + 2)); // why not string
+
+      // quiz
+      // 웹 페이지에서 사용자들이 올린 이미지 파일이 진짜 이미지 파일인가를 확인하고 싶다.
+      // 확장자 명으로 판단한다고 가정하고 확장자명을 추출하는 코드를 작성하자
+      function validFileExtens(filename) {
+        let ext = fileName.slice(fileName.lastindexOf(".") + 1);
+        if (
+          ext.toLowerCase() == "png" ||
+          ext.toLowerCase() == "jpeg" ||
+          ext.toLowerCase() == "jpg"
+        ) { return true;
+        } else {
+            return false;
+        }
+      }
+      let file1 = "aaaa.png";
+      let file2 = "bbbb.jpg";
+      let file3 = "cccc.JPEG";
+/*       console.log(validFileExtens(file1) ? "이미지 파일이 맞습니다." : "이미지 파일이 아닙니다.");
+      console.log("이미지 파일이 ${validFileExtens(file1) ? "맞습니다" : "아닙니다"} */
+
+      // startWith(), endsWith()
+      // string이 params로 시작하는가 / 끝나는가
+      // 대소문자는 구분하며, 띄어쓰기는 구분하지 않는다.
+      // startWith는 string에서 원하는 params를 찾는 시작점을 정할 수 있다.
+      // endsWith는 string에서 원하는 params를 찾기가 끝나는 지점을 정할 수 있다.
+      let file4 = "aaaa.png";
+      let file5 = "bbbb.jpp";
+      let file6 = "cccc.JPEG";
+      console.log(file4.endsWith("png")); // trues
+      console.log(file5.endsWith("jpg")); // false
+      console.log(file6.endsWith("jpeg")); // false
+      console.log(file6.toLowerCase().endsWith("jpeg")); // true => method chaining
+
+      let text 
+    </script>
+  </body>
+</html>

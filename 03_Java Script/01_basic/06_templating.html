@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<script>
+    function printInfo(name, age) {
+        let myInfo = `myName: ${name}, myAge: ${age}`;
+        // console.log(myInfo);
+    }
+    function getInfo(name, age) {
+        return `myName: ${name}, myAge: ${age}`;
+    }
+</script>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>자바스크립트 템플레이트를 활용한 출력</h1>
+    <h3>형식을 정해놓고 변수를 포함해 출력하고 싶을 때 사용</h3>
+<script>
+    let myName = "park";
+    let myAge = 20;
+    let myInfo = `myName: ${myName}, myAge: ${myAge}`;
+
+    // console.log(myInfo);
+    printInfo(myName, myAge);
+    // let result = getInfo(myName, myAge);
+    // console.log(result);
+    console.log(getInfo(myName, myAge));
+</script>
+</body>
+</html>

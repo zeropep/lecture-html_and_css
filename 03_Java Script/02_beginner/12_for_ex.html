@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+</head>
+<body>
+    <h1>for문 연습</h1>
+    <ul>
+        <li>정수 n을 입력 받으면 n의 높이만큼 직각삼각형을 *로 만들어보기</li>
+        <li>컴퓨터와 가위바위보 게임을 10번 진행해 본인의 승률 예측</li>
+        <li>로또 1등의 확률</li>
+    </ul>
+    <button type="button" id="btn1">sub1</button>
+    <button type="button" id="btn2">sub2</button>
+    <button type="button" id="btn3">sub3</button>
+<script>
+    const btn1 = document.getElementById("btn1");
+    const btn2 = document.getElementById("btn2");
+    const btn3 = document.getElementById("btn3");
+
+    function prob1() {
+        let a = "*";
+        let n = 5;
+        for (let i = 1; i < n+1; i++) {
+            console.log(a.repeat(i));
+            
+        }
+    
+        // 혹은
+    
+        let b = ""
+        for (let i = 0; i < n; i++) {
+            b += "*";
+            console.log(b);
+            
+        }
+    }
+
+    function prob2() {
+
+        let n = 50;
+        let win = 0;
+        let lose = 0;
+        let draw = 0;
+        for (let i = 0; i < n; i++) {
+            let com = parseInt(Math.floor(Math.random()*3 + 1));
+            function comC(comp) {
+                return comp == 1 ? "가위"
+                    : comp == 2 ? "바위"
+                    : "보";
+            }
+            com = comC(com)
+    
+            let me = parseInt(Math.floor(Math.random()*3 + 1));
+            function meC(my) {
+                return my == 1 ? "가위"
+                    : my == 2 ? "바위"
+                    : "보";
+            }
+            me = meC(me)
+            
+            if (me == "가위") {
+                if (com == "가위") {
+                    draw++;
+                } else if (com == "바위") {
+                    lose++;
+                } else {
+                    win++;
+                }
+            } else if (me == "바위") {
+                if (com == "가위") {
+                    win++;
+                } else if (com == "바위") {
+                    draw++;
+                } else {
+                    lose++;
+                }
+            }else {
+                if (com == "가위") {
+                    lose++;
+                } else if (com == "바위") {
+                    win++;
+                } else {
+                    draw++;
+                }
+            }
+            
+        }
+        console.log(`${n}번의 게임 중 ${win}번 이기고, ${lose}번 지고, ${draw}번 이겼습니다.`);
+        console.log(`승률은 ${(win / (n - draw) * 100).toPrecision(3)}% 입니다.`);
+        // 이 경우에는 정확하게 떨어지기 때문에 switch문이 더 편하다.
+    }
+
+    function prob3() {
+        let a = 1;
+        for (let i = 0; i < 6; i++) {
+            a *= (6- i) / (45-i)
+        }
+
+        console.log(a);
+    }
+    btn1.addEventListener("click", prob1);
+    btn2.addEventListener("click", prob2);
+    btn3.addEventListener("click", prob3);
+
+</script>
+</body>
+</html>

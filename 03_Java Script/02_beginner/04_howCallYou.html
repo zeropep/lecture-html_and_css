@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+</head>
+<body>
+    <h1>한국인의 호칭</h1>
+    나의 성별 : <input type="text" id="meGen" placeholder="남 or 여"><br>
+    나의 나이 : <input type="number" name="" id="meAge"><br>
+    상대방의 성별 : <input type="text" id="uGen" placeholder="남 or 여"><br>
+    상대방의 나이 : <input type="number" name="" id="uAge"><br>
+    <button type="button" id="btn">submit</button>
+<script>
+    const submit = document.getElementById("btn")
+    
+    function HowToCall() {
+        const myGen = document.getElementById("meGen").value;
+        const myAge = parseInt(document.getElementById("meAge").value);
+        const yourGen = document.getElementById("uGen").value;
+        const yourAge = parseInt(document.getElementById("uAge").value);
+
+        if (myAge > yourAge) {
+            if (yourGen == "남") {
+                console.log(`남동생입니다.`);
+            } else if (yourGen == "여") {
+                console.log(`여동생입니다.`);
+            }
+        } else if (myAge < yourAge) {
+            if (myGen == "남" && yourGen == "남") {
+                console.log(`형입니다.`);
+            } else if (myGen == "남" && yourGen == "여") {
+                console.log(`누나입니다.`);
+            } else if (myGen == "여" && yourGen == "남") {
+                console.log(`오빠입니다.`);
+            } else {
+                console.log(`언니입니다.`);
+            }
+        } else {
+            if (myGen == "남" && yourGen == "여") {
+                console.log(`여자사람친구입니다.`);
+            } else if (myGen == "여" && yourGen == "남") {
+                console.log(`남자사람친구입니다.`);
+            } else {
+                console.log(`친구입니다.`);
+            }
+        }
+
+        function HowCall(mg, yg, ma, ua) {
+            if (ma == ua) {
+                return `친구`;
+            } else if (ma > ua) {
+                return ug == "m" ? `남동생` : `여동생`;
+            } else {
+                return ug == "m" ? `오빠` : `언니`;
+            }
+        }
+    }
+    submit.addEventListener("click", HowToCall)
+    
+</script>
+</body>
+</html>

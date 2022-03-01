@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<script>
+    function payment(total, Week, pay) {
+        if (Week >= 40) {
+            return (total * pay) + (8 * 4 * pay);
+        } else {
+            return (total * pay) + ((Week / 40) * 8 * 4 * pay);
+        }
+    }
+    function BMI(user, height, weight) {
+        let name = user;
+        let cal = weight / (height * height / 10000);
+        let printTemp = `${name}의 BMI지수는 ${cal}입니다.`
+        return console.log(printTemp);
+    }
+</script>
+</head>
+<body>
+    <h1>miidle check</h1>
+    <h3>1. 아르바이트 급여 계산</h3>
+    <ol>
+        <li>아르바이트 장소 : ?</li>
+        <li>근무시간 : ?</li>
+        <li>시간당Pay : ?</li>
+        <li>아르바이트 </li>
+    </ol>
+    <h3>2. BMI 지수 계산</h3>
+    <ol>
+        <li>사용자 이름, 키, 몸무게 입력</li>
+        <li></li>
+    </ol>
+<script>
+    let workPlace = "starbucks";
+    let totalHours = 160;
+    let hoursOfWeek = 40;
+    let money = 8720;
+    let salary = `${workPlace}에서 주 ${hoursOfWeek}시간씩 총 ${totalHours}를 일해서 
+    받을 총 금액은 ${payment(totalHours, hoursOfWeek, money)}입니다.`
+    console.log(salary);
+
+    BMI("park", 168, 64);
+</script>
+</body>
+</html>
