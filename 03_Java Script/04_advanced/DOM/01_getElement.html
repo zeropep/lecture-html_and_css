@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>DOM getElements</h1>
+    <ul id="ul">
+        <li id="odd">first</li>
+        <li id="even">second</li>
+        <li id="odd">third</li>
+        <li id="even">fourth</li>
+    </ul>
+    <h3>Result : <span></span></h3>
+    <a href="">네이버 열기</a>
+<script>
+    // document.querySelector("a").href = "https://www.naver.com";
+    // document.querySelector("a").target = "_blank";
+    let attrs = {
+        attName: "href",
+        attValue: "https://www.naver.com"
+    }
+    document.querySelector("a").setAttribute(attrs.attName, attrs.attValue);
+    document.querySelector("a").setAttribute("target", "_blank");
+    // interaction하기가 쉬움
+
+
+    let ul = document.getElementById("ul");
+    console.log(ul);
+    console.log(typeof ul); // object => object끼리 비교는 instanceof
+    console.log(ul instanceof HTMLUListElement); // true
+
+    let lis = document.getElementsByTagName("li"); 
+    // tagName과 같이 여러개를 가져오는 경우에는 getElements로 -s가 붙는다
+    // 그리고 가져오는 것은 배열 형식으로 들어온다.
+    console.log(lis); //HTMLCollection object로 들어온다.
+    // 각 li도 object의 형식으로 들어오는데,
+    // 즉슨 HTML의 모든 코드들을 객체형식으로 관리하며
+    // 이것이 object model이라는 것이다.
+
+    let odd = document.getElementsByClassName("odd");
+    console.log(odd);
+
+    let even = document.querySelectorAll(".even");
+    console.log(even); // NodeList [], 형태가 다르지만 HTMLCollection 사용법은 비슷함
+
+    let ul2 = document.querySelector("#ul");
+    console.log(ul2);
+
+    let li = document.querySelector("ul > li:first-child");
+    console.log(li);
+    console.log(li instanceof HTMLLIElement); // true
+
+    document.write(new Date());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>자바스크립트의 비표준 속성 이용하기</h1>
+    <ul id="ul">
+        <li>Markup language들은 사용자(개발자)에게 표준이 아닌 사용자만의 문법을</li>
+        <li>사용할 수 있도록 설계되었음.</li>
+        <li>HTML에서도 사용할 수 있는데 과도하게 사용하면 개발효율과 가독성이 떨어짐</li>
+        <li>그러므로 적당한 규칙을 적용한 비표준 속성을 사용하는 것을 권장한다.</li>
+        <li>태그 속성의 이름을 data-로 시작하여 하이픈(-)뒤에 특정 의미를 갖는</li>
+        <li>이름을 사용할 수 있으며, 이 규칙을 JS에서 인식할 수 있도록 설계됨.</li>
+        <li>dataset property</li>
+        <li class="lis" id="" data-ino="li_last"></li>
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    let li_last_tag = document.querySelector(".lis");
+    console.log($(li_last_tag));
+    console.log(li_last_tag.dataset.ino);
+    let ul = document.getElementById("ul");
+    console.log(ul);
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>배열과 객체 정렬 연습</h1>
+    <h3>quiz 1.</h3>
+    <ul>
+        <li>1 ~ 45까지의 6개의 숫자를 랜덤으로 생성한 후 순차 정렬(중복허용)</li>
+        <li>6개의 숫자 중 중복되는 숫자들을 검사한 후 중복되는 숫자 중 뒤에 나온 숫자를 제거</li>
+        <li>다시 랜덤 숫자를 한개 만들어 기존의 배열에 저장되어 있는 숫자와 중복검사 후</li>
+        <li>중복되지 않으면 배열에 추가하고, 이후 순차정렬</li>
+    </ul>
+    <button type="button" id="btn">answer</button>
+<script>
+    const btn = document.getElementById("btn");
+
+    function prob() {
+        let arr = [];
+        for (let i = 0; i < 6; i++) {
+            let num = Math.floor(Math.random() * 44 + 1)
+            arr.push(num);
+        }
+        arr.sort(function (a, b) {
+            return a - b;
+        });
+        console.log(arr);
+        function check() {
+            for (let j = 0; j < arr.length - 1; j++) {
+                for (let z = 0; z < arr.length; z++) {
+                    if (arr[j] == arr[z] && j != z) { 
+                        arr.splice(z, 1);
+                    } 
+                }
+            }
+        }     
+        check(arr);
+        if (arr.length < 6) {
+            let newNum = Math.floor(Math.random() * 44 + 1);
+            arr.push(newNum);
+            check(arr);
+        }
+        arr.sort(function (a, b) {
+        return a - b;
+        });
+        console.log(arr);
+    }
+
+    btn.addEventListener("click", prob)
+</script>
+</body>
+</html>

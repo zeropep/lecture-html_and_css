@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>객체와 배열의 조합</h1>
+    <ul>
+        <li>배열의 순환 탐색 방법 : standard for, for of, foreach</li>
+        <li>객체의 순환 탐색 방법 : for in, foreach</li>
+    </ul>
+<script>
+    const memberObject = {
+        name: "park",
+        age: 25,
+        famous: 10,
+        blood: "O",
+        favors: ["baseball", "basketball", "game", "movie", "etc..."]
+    }
+    console.log(memberObject.name);
+    for (const key in memberObject) {
+        console.log(`${key} : ${memberObject[key]}`);
+        // memberObject.key 는 불가능. => .을 쓰려면 실제 key이름이 뒤에 와야함
+        // for of는 ","로 분리된 요소 통째로 가져오기 때문에 배열에 맞고
+        // for in은 각 key의 이름값만을 가져오기 때문에 객체에 어울림
+    }
+    // memberObject의 내용을 for in, for of를 활용하여 모두 출력해 보세요.
+    for (const key in memberObject) {
+        switch (key) {
+            case "favors":
+                for (const elem of memberObject[key]) {
+                    console.log(elem);
+                }
+                break;
+            default: console.log(`${key} : ${memberObject[key]}`);
+                break;
+        }
+    }
+</script>
+</body>
+</html>

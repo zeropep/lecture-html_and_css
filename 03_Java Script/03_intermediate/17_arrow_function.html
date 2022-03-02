@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>arrow function</h1>
+    <ul>
+        <li>함수표현식을 더 간단하게  => (화살표) 지시자를 사용하여 코드량을 줄임</li>
+        <li>가독성이 낮지만 최근 많이 사용되는 추세</li>
+        <li>변수명, 파라미터, 리턴의 형태만을 가지고 함수 표현식을 구성할 수 있음</li>
+    </ul>
+<script>
+    let makeSum = function (a, b) {
+        // a *= 2;
+        // b *= 3;
+        return a + b;
+    }
+    console.log(makeSum(2, 3));
+
+    let makeSumArrow = (a, b) => a + b;
+    console.log(makeSumArrow);
+
+    let makeSumArrow2 = (a, b) => {
+        // a *= 2;
+        // b *= 3;
+        return a + b;
+    }
+    let powerNum = num => num*num;
+    console.log(powerNum);
+
+    let getJob = () => {return {job: "소프트웨어 엔지니어"};};
+    console.log(getJob().job);
+
+    let getJob2 = () => ({job: "소프트웨어 엔지니어"});
+    console.log(getJob2().job);
+
+    let sumNums = () => {
+        // console.log(arguments.toString());
+    }
+    sumNums(1, 2, 3, 4, 5);
+    // arrow function에서는 arguments가 적용되지 않음.
+
+    let sumNums2 = (a, b, ...etc) => {
+        console.log(a, b, etc);
+    }
+    sumNums2(1, 2, 3, 4, 5);
+    // rest params는 적용가능
+
+    let sumNums3 = (a, b, c=a+b) => {
+        console.log(a, b, c);
+    }
+    sumNums3(1, 2);
+    // optional params 적용가능
+</script>
+    <button type="button" id="btn">버튼 클릭하기</button>
+    <button type="button" id="btn2" onclick="myFunction();">버튼 클릭하기</button>
+    <!-- btn2의 방식은 추천하지않음 -->
+    <!-- 해당 줄을 읽을때 muFunction()을 모르기 때문-->
+<script>
+    document.getElementById("btn").addEventListener("click", () => {
+        console.log("button clicked");
+    });
+    document.getElementById("btn2").onclick = () => {
+        console.log("button clicked2");
+    } 
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>array element 수정하기</h1>
+    <ul>
+        <li>배열 원소의 인덱스 값을 이용하여 수정하기</li>
+        <li>배열 메서드를 사용하여 수정하기</li>
+    </ul>
+<script>
+    let members = ["김아연", "김태형", "김호중", "주혁중", "손필규", "임정민"]
+
+    members[0] = "김태형";
+    console.log(members[0]); // 김태형
+
+    for (let m of members) {
+        console.log(m);
+        m = "김호중";
+    }
+    console.log(members.toString()); 
+    // for-of문으로 실행하면 array의 값이 바뀌지 않음
+    // 왜냐하면 m이라는 것은 단순히 members속 element의 이름값에 지나지 않음.
+    // 그러므로 조회의 목적으로는 for-of가 편하지만,
+    // 값을 수정하기 위해서는 standard for문을 사용해야 한다.
+
+    for (let i = 0; i < members.length; i++) {
+        members[i] = "김호중";
+    }
+    // 이 방식에서는 인덱스값을 가지는 요소 그 자체를 불러낸다.
+    console.log(members[0]);
+    console.log(members.toString());
+    let newArr = [];
+    newArr.push("a");
+    newArr.push("b");
+    console.log(newArr);
+</script>
+</body>
+</html>

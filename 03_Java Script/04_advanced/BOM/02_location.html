@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>BOM - location</h1>
+    <ul>
+        <li>a href="url" 을 활용하여 페이지 이동과 같은 효과</li>
+        <li>주소표시줄을 location이라고 생각하면 됨</li>
+        <li>주소표시줄에 target url을 입력하여 페이지 이동을 작동시키는 원리</li>
+    </ul>
+    <button type="button" id="btn">location.href=?</button>
+    <button type="button" id="btn2">location.replace();</button>
+    <button type="button" id="btn3">navigator object</button>
+    <ol id="ol"></ol>
+<script>
+    document.getElementById("btn").onclick = () => {
+        location.href = "https://www.naver.com";
+    };
+
+    document.getElementById("btn2").onclick = () => {
+        // 직전 주솟값을 덮어쓰기 하는 원리
+        // 직전 주솟값이 기록되지 않음
+        location.replace("https://www.naver.com");
+    };
+    document.getElementById("btn3").onclick = () => {
+        const ol = document.getElementById("ol");
+        for (const key in window.navigator) {
+            let li = document.createElement("li");
+            li.innerText = `${key} : ${window.navigator[key]}`;
+            ol.appendChild(li);
+        }
+    };
+    // netscape
+    // 2000년 초까지 사용되던 브라우저
+</script>
+</body>
+</html>

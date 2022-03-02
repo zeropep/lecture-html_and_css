@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>날짜와 시간 연산</h1>
+    <ul>
+        <li>두 개의 input 태그를 date 타입으로 만든다</li>
+        <li>버튼을 제작하여 클릭을 하면 두개의 input 태그의 값을 받아온다</li>
+        <li>두 날짜의 차이를 계산하여 몇 일 차이가 나는지 h3태그에 출력</li>
+    </ul>
+    시작 날짜 : <input type="date" name="" id="date1"><br>
+    종료 날짜 : <input type="date" name="" id="date2"><br>
+    <button type="button" id="btn">계산하기</button><br>
+    <h3 id="result"></h3>
+    <button type="button" id="btn2">확인</button><br>
+<script>
+    const btn = document.getElementById("btn");
+    const btn2 = document.getElementById("btn2");
+    const h3 = document.getElementById("result");
+    
+    function calDate() {
+        let startDate = new Date(document.getElementById("date1").value);
+        let endDate = new Date(document.getElementById("date2").value);
+        let diff = ((((startDate - endDate)/1000)/60)/60)/24;
+        document.getElementById("result").innerText = `두 날짜의 차이는 ${diff}일 입니다`;
+        
+    }
+
+    btn.addEventListener("click", calDate)
+
+    function func() {
+        // 연산속도 측정
+        let sum = 0;
+        let start = Date.now();
+        for (let i = 0; i < 1000000; i++) {
+            if (i % 2 == 0) {
+                sum += i;
+            }
+            
+        }
+        let end = Date.now();
+        console.log(`연산에 걸린 시간은 ${end - start}입니다`);
+    
+        let arr = [];
+        let start2 = Date.now();
+        for (let i = 1; i <= 1000000; i++) {
+            arr.push(i);
+            
+        }
+        arr.reduce(function (total, elem) {
+        return elem % 2 == 0 ? total + elem : total;        
+        })
+    
+        let end2 = Date.now();
+        console.log(`연산에 걸린 시간은 ${end2 - start2}입니다`);
+        
+    }
+
+    btn2.addEventListener("click", func)
+</script>
+</body>
+</html>

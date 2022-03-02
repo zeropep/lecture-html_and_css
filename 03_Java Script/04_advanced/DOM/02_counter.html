@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>버튼을 활용한 카운터 만들기</h1>
+    <h1 id="cal">0</h1>
+    <button type="button" id="plus">+</button>
+    <button type="button" id="minus">-</button>
+<script>
+    function getCurrNum() {
+        let currNum = parseInt(document.getElementById('cal').innerText);
+        if (Number.isNaN(currNum)) {
+            // Number.isNaN() 주어진 값이 NaN이면 true 반환
+            currNum = 0;
+        }
+        return currNum;
+    }
+    document.getElementById('plus').addEventListener('click', function () {
+        let currNum = parseInt(getCurrNum());
+        currNum++;
+        document.getElementById('cal').innerText = currNum;
+    });
+    document.getElementById('minus').addEventListener('click', function () {
+        let currNum = parseInt(getCurrNum());
+        currNum--;
+        document.getElementById('cal').innerText = currNum;
+    });    
+    /* 
+    1. 버튼두개가 있으니까 버튼의 이벤트리스너 2개가 필요.
+    2. 버튼의 기능은 현재h3에 표시된 값을 불러와서 + 또는 - 를 해야함.
+    3. 그러므로 현재 값을 불러오는 기능 필요. 
+    4. h3의 innerText로 불러온 값을 변수에 저장 후 변수를 0으로 초기화.
+    5. 버튼기능에 현재값을 불러오는 기능을 수행하고, ++ 또는 --를 해준 뒤 다시 h3에 집어넣는 작업을 수행
+    6. 디버깅 해보면 h3에 NaN이 뜨는것을 볼 수 있다.
+    7. 애초에 html에서 h3에 값이 없기 때문에 발생하는 문제라고 볼 수 있다.
+    8. 그러므로 첫 버튼을 누를 때 h3에서 가져온 값이 NaN이면 0을 넣어주어야 한다.
+    9. 조건식은 true일때를 찾아야 하므로, currNum이 isNaN인지를 물어야 한다.
+    10. 그런데 NaN은 데이터형식상 숫자여야 하므로 currNum에 parseInt를 추가해준다.
+    11. 물론 어차피 h3에 0이 있었다 하더라도 innerText로 받아오면 string을 주기 때문에 연산을 위해서는 parseInt가 필요하다.
+    12. if가 끝나면 currNum을 리턴해주고 이벤트리스너를 정리해주면 끝.
+    */
+</script>
+</body>
+</html>
