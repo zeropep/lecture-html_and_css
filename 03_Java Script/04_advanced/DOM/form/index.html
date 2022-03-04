@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="login-form">
+      <form>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          class="text-field"
+          placeholder="이메일"
+        /><br />
+        <input
+          type="password"
+          id="pwd"
+          name="pwd"
+          class="text-field"
+          placeholder="비밀번호"
+        /><br />
+        <input type="submit" value="로그인" class="submit-btn" />
+      </form>
+      <div class="links">
+        <a href="#">비밀번호를 잊어버리셨나요?</a>
+      </div>
+    </div>
+
+<script>
+  function buttonActivation() {
+    const email = document.querySelector("input[name=email]").value;
+    const pwd = document.querySelector("input[name=pwd]").value;
+
+    if (email.contains("@") && pwd.length > 7) {
+      document.querySelector("input[type=submit]").style.backgroundColor = "#1BBC9b";
+      document.querySelector("input[type=submit]").setAttribute("disabled", false);
+    } else {
+      document.querySelector("input[type=submit]").style.backgroundColor = "#aaa";
+      document.querySelector("input[type=submit]").setAttribute("disabled", true);
+
+    }
+  }
+
+  email.addEventListener("input", buttonActivation)
+
+  pwd.addEventListener("input", buttonActivation)
+</script>
+  </body>
+</html>

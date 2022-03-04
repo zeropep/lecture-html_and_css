@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Javascript Level 2 Test</title>
+</head>
+<body>
+<h1>점수 / 등급 / 랭킹 출력하기</h1>
+<ol>
+    <li>6개의 과목 점수와 인원 수 입력 받기</li>
+    <li>합계, 평균, 등급 연산하여 합계로 순위를 결정</li>
+    <li>등급은 (A[90이상], B[80이상], C[70이상], D[60이상], F[60미만])</li>
+    <li>가장 높은 합계점수를 받은 사람부터 출력</li>
+</ol>
+인원 수 : <input type="number" name="" id="peopleNum"><br>
+<button type="button" id="btn">점수 받기</button>
+<ul id="ranking">
+
+</ul>
+<script>
+    let records = [];
+    document.getElementById("btn").addEventListener("click", () => {
+        let subject = 6;
+        let num = parseInt(document.getElementById("peopleNum").value);
+        document.getElementById("ranking").innerHTML = "";
+        for (let j = 0; j < num; j++) {
+            makeScore(num, subject, j);   
+        };
+        records.sort(function (a, b) {return b.average - a.average});
+        console.log(records);
+        for (let k = 0; k < num; k++) {
+            makeLi(records, k)
+            
+        }
+    });
+
+    function makeLi(arr, k) {
+        let li = document.createElement("li");
+        li.innerText = `${k + 1}등은 ${records[k].name}이며, 총합${records[k].sum}점, 평균${records[k].average}, 학점은${records[k].grade}입니다.`;
+        document.getElementById("ranking").appendChild(li);
+    };
+
+    function makeScore(num, subject, j) {
+        let scores = [];
+        for (let i = 0; i < subject; i++) {
+            let score = Math.floor(Math.random() * 61) + 40;
+            // 점수 높게나오기가 힘들어서 최소기준을 줬습니다.
+            scores.push(score);
+        };
+
+        let sum = scores.reduce(function add(a, b) {return a + b;}, 0);
+
+        let avg = parseInt((sum / scores.length));
+
+        let grade = "";
+        avg >= 90 ? grade = "A"
+            : avg >= 80 ? grade = "B"
+            : avg >= 70 ? grade = "C"
+            : avg >= 60 ? grade = "D"
+            : grade = "F"
+        makeObj(j, sum, avg, grade)
+    };
+    
+    function makeObj(j, sum, avg, grade) {
+    let newObj = {};
+    newObj.name = `person${j+1}`;
+    newObj.sum = sum;
+    newObj.average = avg;
+    newObj.grade = grade;
+    records.push(newObj);
+    };
+</script>
+</body>
+</html>

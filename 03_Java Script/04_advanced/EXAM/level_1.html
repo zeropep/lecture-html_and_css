@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Javascript Level 1 Test</title>
+</head>
+<body>
+<h1>인원 정보 출력하기</h1>
+<ol>
+    <li>인원수(양의 정수) 입력받기</li>
+    <li>인원수 만큼 이름과 나이 입력 받기</li>
+    <li>입력받은 정보를 출력하기(console.log() X)</li>
+</ol>
+<input type="number" min="1", name="" id="human" placeholder="">
+<button type="button" id="btn">인원수 설정하기</button>
+<div id="getInfo">
+
+</div>
+<ul id="list">
+
+</ul>
+<script>
+    document.getElementById("btn").addEventListener("click", () => {
+        document.getElementById("getInfo").innerHTML = "";
+        let num = parseInt(document.getElementById("human").value);
+        if (num > 0) {
+            createInput(num);
+        } else {
+            alert("양의 정수를 입력해주세요")
+        }
+    });
+
+    function createInput(num) {
+        for (let i = 0; i < num; i++) {
+            let getName = document.createElement("input");
+            getName.setAttribute("type", "text");
+            getName.setAttribute("placeholder", `${i+1}번 이름`);
+            getName.setAttribute("id", `name${i+1}`)
+            let getAge = document.createElement("input");
+            getAge.setAttribute("type", "number");
+            getAge.setAttribute("placeholder", `${i+1}번 나이`);
+            getAge.setAttribute("id", `age${i+1}`)
+            console.log(num);
+            document.getElementById("getInfo").appendChild(getName);
+            document.getElementById("getInfo").appendChild(getAge);
+        }
+        let printBtn = document.createElement("button");
+        printBtn.setAttribute("type", "button");
+        printBtn.setAttribute("id", "printInfo");
+        printBtn.innerText = "출력하기"
+        document.getElementById("getInfo").after(printBtn);
+
+        document.getElementById("printInfo").addEventListener("click", () => {
+            showPrint(num);
+        });
+    };
+
+    function showPrint(num) {
+        let name = "";
+        let age = "";
+        for (let i = 0; i < num; i++) {
+            name = document.getElementById(`name${i+1}`).value;
+            age = document.getElementById(`age${i+1}`).value;
+            let li = document.createElement("li");
+            li.innerText = `${i+1}번의 이름은 : ${name}, 나이는 ${age}입니다.`;
+            document.getElementById("list").appendChild(li);
+        }
+    }
+</script>
+</body>
+</html>

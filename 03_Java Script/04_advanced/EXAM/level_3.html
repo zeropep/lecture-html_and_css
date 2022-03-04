@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Javascript Level 3 Test</title>
+</head>
+<body>
+    <h1>호텔 관리 프로그램</h1>
+    <ol>
+        <li>n개의 층과 1개 층마다 m개의 호실 있는 호텔을 초기화</li>
+        <li>메뉴 > 1:객실현황전체보기 / 2:입실 / 3:퇴실 / 4:개별룸 정보 보기 / etc:종료</li>
+        <li>입실정보 => 입실할 방 번호, 이름, 입실 날짜와 시간</li>
+        <li>객실현황전체보기 => 입실가능 or 사용중 출력</li>
+        <li>퇴실 => 퇴실할 방 번호</li>
+    </ol>
+    <button type="button" id="create">make hotel</button>
+    <button type="button" id="menu">MENU</button>
+    <div id="more">
+    1. <button type="button" id="all">객실 전체현황 보기</button>
+       <button type="button" id="close">객실 전체현황 닫기</button><br>
+    <ul id="roomList"></ul>
+    <hr>
+    2. <button type="button" id="reserve">입실</button><br>
+    예약자 : <input type="text" name="" id="guest"><br>
+    방번호 : <input type="number" name="" id="reserNum"><br>
+    예약날짜 : <input type="date" name="" id="date"><br>
+    예약시간 : <input type="time" name="" id="time"><br>
+    <hr>
+    3. <button type="button" id="leave">퇴실</button><br>
+    퇴실방번호 : <input type="number" name="" id="leaveNum"><br>
+    <hr>
+    4. <button type="button" id="detail">개별룸 정보 보기</button><br>
+    방번호 : <input type="number" name="" id="roomInfo"><br>
+    <div id="room"></div>
+    <hr>
+    5. <button type="button" id="end">종료</button><br>
+    </div>
+<script>
+    let hotelArr = [];
+    let n = 3;
+    let m = 4;
+    document.getElementById("create").addEventListener("click", () => {
+        hotelArr = [];
+        for (let i = 0; i < n * m; i++) {
+            let room = new Hotel(`room${i+1}`, "empty", "", "", "")
+            hotelArr.push(room);
+        };
+        console.log(hotelArr[0]);
+    });
+
+    document.getElementById("all").addEventListener("click", () => {
+        document.getElementById("roomList").innerText = "";
+        for (let i = 0; i < hotelArr.length; i++) {
+            let li = document.createElement("li");
+            li.innerText = `${hotelArr[i].roomNum}의 현재 상태는 ${hotelArr[i].status}입니다.`;
+            document.getElementById("roomList").appendChild(li);
+        }
+    });
+
+    document.getElementById("close").addEventListener("click", () => {
+        document.getElementById("roomList").innerText = "";
+    });
+
+    document.getElementById("reserve").addEventListener("click", () => {
+        let guest = document.getElementById("guest").value;
+        let reserveNum = parseInt(document.getElementById("reserNum").value);
+        let date = document.getElementById("date").value;
+        let time = document.getElementById("time").value;
+        let check = hotelArr[reserveNum - 1].status;
+        // console.log(guest, reserveNum, date, time);
+        if (reserveNum < n*m + 1 && reserveNum > 0) {
+            if (check == "empty") {
+                hotelArr[reserveNum - 1].accom(date, time, guest);
+            } else {
+                alert("현재 예약 불가능한 상태입니다.")
+            };
+        } else {
+            alert("정확한 방 번호를 입력하세요")
+        };
+        document.getElementById("guest").value = "";
+        document.getElementById("reserNum").value = "";
+        document.getElementById("date").value = "";
+        document.getElementById("time").value = "";
+    });
+
+    document.getElementById("leave").addEventListener("click", () => {
+        let leaveNum = parseInt(document.getElementById("leaveNum").value);
+        let check = hotelArr[leaveNum - 1].status;
+        if (leaveNum < n*m +1 && leaveNum > 0) {
+            if (check == "occupied") {
+                hotelArr[leaveNum - 1].leave(date, time, guest);
+            } else {
+                alert("비어있는 호실입니다.")
+            };
+        } else {
+            alert("정확한 방 번호를 입력하세요")
+        };
+        document.getElementById("leaveNum").value = "";
+    });
+
+    document.getElementById("detail").addEventListener("click", () => {
+        let roomInfo = parseInt(document.getElementById("roomInfo").value);
+        let check = hotelArr[roomInfo - 1].status;
+        let room = document.getElementById("room");
+        if (roomInfo < n*m + 1 && roomInfo > 0) {
+            if (check == "occupied") {
+                room.innerText = `${roomInfo}번 방은 현재 ${hotelArr[roomInfo - 1].customer}님이 ${hotelArr[roomInfo - 1].date} ${hotelArr[roomInfo - 1].time}부터 이용하고 있습니다.`
+            } else {
+                room.innerText = `이 방은 현재 비어있습니다.`;
+            };
+        } else {
+            alert("정확한 방 번호를 입력하세요")
+        };
+        document.getElementById("roomInfo").value = "";
+    });
+
+    document.getElementById("end").addEventListener("click", () => {
+        hotelArr = [];
+        alert("호텔관리가 종료되었습니다.")
+    })
+
+    class Hotel {
+        constructor(roomNum, status, date, time, name) {
+            this.roomNum = roomNum;
+            this.status = status;
+            this.date = date;
+            this.time = time;
+            this.customer = name;
+        };
+        accom(date, time, name) {
+            this.status = "occupied";
+            this.date = date;
+            this.time = time;
+            this.customer = name;
+        };
+        leave() {
+            this.status = "empty"
+            this.date = "";
+            this.time = "";
+            this.customer = "";
+            
+        };
+    };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>Mouse Event</h1>
+    <ul>
+        <li>click : onclick, dbclick(더블클릭), contextmenu(우클릭)</li>
+        <li>wheel : wheel, scroll, auxclick</li>
+        <li>drag & drop : drag, [dragstart, dragleave, dragover, dragenter, dragend], drop</li>
+        // 괄호 부분은 보통 생략함
+        <li>focus & blur : 폼태그에 커서 이동, 커서 아웃</li>
+        <li>input, change : 입력된 상태, 입력한 값이 바뀌는 상태</li>
+        <li>mouseover, mouseleave 등 : 마우스 포인터의 위치값에 반응</li>
+        <!-- 
+            mouseover(mouseout) : target element의 자식요소에까지 영향 미침.
+            mouseenter(mouseleave) : target element에만 영향을 미침
+         -->
+        <li>submit : 폼태그가 제출될 때</li>
+    </ul>
+    <button type="button" id="btn">버튼을 클릭하면</button>
+    <h3 id="result"></h3>
+    <input type="text" id="ip">
+    <select name="" id="sel">
+        <option value="a">a</option>
+        <option value="b">b</option>
+        <option value="c">c</option>
+    </select>
+<script>
+    // wheel button click
+    // 0: 좌클릭(click), 1:휠클릭(auxclick), 2:우클릭(contextmenu)
+    document.getElementById("btn").addEventListener("auxclick", (e) => {
+        // MouseEvent.button => 0:좌측, 1:휠, 2: 우측
+        console.log(e.button);
+        document.getElementById("result").innerText = "마우스 휠 클릭"
+    });
+    document.getElementById("ip").addEventListener("input", () => {
+        document.getElementById("result").innerText = "인풋태그에 입력함"   
+    })
+    document.getElementById("sel").addEventListener("change", () => {
+        document.getElementById("result").innerText = "인풋태그를 변경함"   
+    })
+</script>
+</body>
+</html>

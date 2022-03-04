@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <button type="button" id="btn1">Add List</button>
+    <ul id="ul"></ul>
+    <button type="button" id="btn2">Add List</button>
+    <ol id="ol"></ol>
+    <button type="button" id="btn3">Add List with closure</button>
+    <ol id="ol"></ol>
+
+<script>
+    '<li><a href="#home">Home</a></li>';
+    '<li><a href="#news">News</a></li>';
+    '<li><a href="#contact">Contact</a></li>';
+    '<li><a href="#about">About</a></li>';
+
+    // method를 사용하여 객체 방식으로 만들기
+    const datas = ["Home", "News", "Contact", "About"];
+    const ul = document.getElementById("ul");
+    const ol1 = document.getElementById("ol1");
+    const ol2 = document.getElementById("ol2");
+
+    document.getElementById("btn1").addEventListener("click", () => {
+        datas.forEach(elem => { 
+            let li = document.createElement("li"); // <li></li> 만들어짐
+            let a_in_li = document.createElement("a"); // <a></a> 만들어짐
+            a_in_li.setAttribute("href", `#${elem.toLowerCase()}`); // <a href="#home"></a>
+            a_in_li.innerHTML = elem; // <a href="#home">Home</a>
+            li.appendChild(a_in_li); // <li><a href="#home">Home</a></li>
+            ul.appendChild(li);
+            // 바깥에서 안쪽으로 구조를 만들고
+            // 안쪽의 내용을 채운뒤에 부모자식 계층만 넣어준다.
+
+            console.log(ul);
+        });
+    });
+
+    // 위와같은 방식으로 하나씩 추가하기
+    let idx = 0;
+    document.getElementById("btn2").addEventListener("click", () => {
+        if (idx < datas.length) { 
+            let li = document.createElement("li");
+            let a_in_li = document.createElement("a");
+            a_in_li.setAttribute("href", `#${datas[idx].toLowerCase()}`);
+            a_in_li.innerHTML = datas[idx];
+            li.appendChild(a_in_li);
+            ol.appendChild(li);
+            idx++;
+        };
+    });
+
+    // closure 로 전역변수 없이 만들기
+    const getDatas = (() => {
+        const datas = ["Home", "News", "Contact", "About"];
+        let idx = -1;
+        return () => {
+            idx += 1;
+            return {val: datas[idx], len: datas.length};
+            // 객체 수가 많아진다면 object형식으로 만드는것이 좋다.
+            // 배열로 만들면 index 숫자가 뭘 의미하는지 헷갈리기 때문
+        };
+    })();
+    function createLiTags(obj) { // factory function
+        if (idx < obj.len) { 
+                let li = document.createElement("li");
+                let a_in_li = document.createElement("a");
+                a_in_li.setAttribute("href", `#${obj.val.toLowerCase()}`);
+                a_in_li.innerHTML = obj.val;
+                li.appendChild(a_in_li);
+                ol.appendChild(li);
+                idx++;
+            };
+    }
+    // 이벤트리스너와 실제 기능하는 부분이 나뉘는 이유는
+    // 일단 기능적으로도 다른부분에서 이 기능을 사용할 수도 있고
+    // 이벤트리스너 자체도 어떤 동작을 말하는 것이지
+    // element를 만드는 것은 아니기 때문이다.
+document.getElementById("btn3").addEventListener("click", () => {
+    let data = getDatas();
+    createLiTags(data);
+});
+
+// document.remove(element)
+// 내가 create로 만들어낸 element만을 제거할 수 있고
+// 부모객체를 지우면 하위객체는 다 사라진다.
+
+</script>
+</body>
+</html>

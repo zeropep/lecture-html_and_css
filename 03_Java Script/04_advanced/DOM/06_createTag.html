@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>HTML Tag 생성</h1>
+    <button type="button" id="btn1">Add List</button>
+    <ul id="ul1">
+
+    </ul>
+    <button type="button" id="btn2">Add List</button>
+    <ol id="ol">
+        
+    </ol>
+    <button type="button" id="btn3">Add List</button>
+    <ul id="ul2">
+
+    </ul>
+<script>
+    document.getElementById("btn1").addEventListener("click", () => {
+        let lis = '<li><a href="#home">Home</a></li>';
+            lis += '<li><a href="#news">News</a></li>';
+            lis += '<li><a href="#contact">Contact</a></li>';
+            lis += '<li><a href="#about">About</a></li>';
+        document.getElementById("ul1").innerHTML = lis;
+    });
+    // 이미 다 만들어진 상태라면 바로 넣을 수 있다.
+    // 하지만 내용을 바꾸기는 조금 문제가 있다.
+
+    const datas = ["Home", "News", "Contact", "About"];
+    let idx = 0;
+    document.getElementById("btn2").addEventListener("click",() => {
+        if (idx < datas.length) {
+            let lis = `<li><a href="#${datas[idx].toLowerCase()}">${datas[idx]}</a></li>`;
+            document.getElementById("ol").innerHTML += lis;
+            idx++;
+        }
+    });
+    // list를 버튼누를때마다 하나씩 추가하기
+
+    document.getElementById("btn3").addEventListener("click", () => {
+        let lis = "";
+        for (const elem of datas) {
+            lis += `<li><a href="#${elem.toLowerCase()}">${elem}</a></li>`;
+        }
+        document.getElementById("ul2").innerHTML = lis;
+
+        // 또는 
+
+        let lis2 = "";
+        let idx = 0;
+        while (idx < datas.length) {
+            lis2 +=`<li><a href="#${datas[idx].toLowerCase()}">${datas[idx]}</a></li>`;
+            idx++;
+        }
+        document.getElementById("btn3").innerHTML = lis2
+        // 이 방법도 가능하나 datas의 갯수가 정해져있으므로
+        // 이 경우에는 for문이 더 적절하다.
+    });
+    // arr를 이용하여 list를 한번에 추가하기
+
+
+    // 이 방법은 만들기 쉽지만 string 형식이므로 코드가 드러난다는 것과,
+    // 각각에 대해 수정을 하기가 어려울 수도 있다는 단점이 있다.
+    
+</script>
+</body>
+</html>

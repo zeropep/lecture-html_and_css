@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>getElement, querySelector 의 리턴</h1>
+    <h3>getElement로 탐색할 경우</h3>
+    <ul>
+        <li>HTMLCollection (복수), HTMLElecment (단수)로 리턴을 받는다.</li>
+        <li>자식요소를 가져오는 property : children</li>
+        <li>요소를 가져오는 방식은 Element(tagname)를 기준으로 가져온다</li>
+        <li>property의 이름에 Element가 포함되어 있는 경우가 대부분이다.</li>
+        <li>ex) nextSibling > nextElementSibling</li>
+    </ul>
+    <h3>querySelector로 탐색할 경우</h3>
+    <ul>
+        <li>NodeList, Node로 리턴을 받는다</li>
+        <li>자식요소를 가져오는 property : childNode[Index]</li>
+        <li>요소를 가져오는 방식은 Node를 기준으로 가져온다.</li>
+        <li>Node란 html문서 내부에 각 역할을 하는 존재로 text, 띄어쓰기 등을 말한다.</li>
+        <li>property의 이름은 Node가 포함되어 있는 경우가 다수</li>
+        <li>ex) textNode, nodeValue, nodeType, parentNode...</li>
+    </ul>
+    <h2>DOM에서 탐색하는데 어떤 메서드를 사용했느냐에 따라 메서드와 프로퍼티가 양분되어 있다.</h2>
+    <h2>그래서 처음 탐색 메서드의 선택에 따라 전체 코드의 구성이 달라진다.</h2>
+    <ul class="ul">
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+        <li>Fourth</li>
+    </ul>
+    <ol class="ol">
+        <li>First-OL</li>
+        <li>Second-OL</li>
+        <li>Third-OL</li>
+        <li>Fourth-OL</li>
+    </ol>
+<script>
+    let ul = document.getElementsByTagName("ul");
+    let li_first = ul[2].firstElementChild;
+    let li_first_text = li_first.firstChild.textContent;
+    let li_first_text2 = li_first.innerText;
+    let li_first_text3 = li_first.firstChild.nodeValue;
+    console.log(li_first_text, li_first_text2, li_first_text3);
+
+    ul = document.querySelector(".ul");
+    let ol = document.querySelector(".ol");
+    let li_last_ol = ol.children[3]; // fourth-ol
+    // ol.childNode[3] 이렇게 하면 중간의 엔터값까지 세기 때문에 second-ol을 가져옴
+    // ol.lastChild로 하면 줄의 마지막에 엔터친걸 가져옴
+    ul.append(li_last_ol);
+    // 자식 Node의 마지막으로 붙이기
+    console.log(li_last_ol);
+    let li_third_ol = ol.children[2];
+    ul.prepend(li_third_ol);
+    // 자식 Node의 처음으로 붙이기
+
+    // HTMLCollection은 element와 그 안의 text만 가져온다
+    // NodeList는 element 사이사이의 엔터값까지 가져온다.
+
+    // append를 새롭게 만들어서 추가하기
+    let li_new = document.createElement("li");
+    let a_new = document.createElement("a");
+    a_new.innerText = "새로운 li";
+    a_new.classList.add("links", "deco-non");
+    li_new.appendChild(a_new);
+    ol.append(li_new); 
+
+    let p_tag = document.createElement("p");
+    p_tag.innerText = "새로운 영역의 문단";
+    let p_tag2 = document.createElement("p");
+    p_tag2.innerText = "새로운 영역의 문단 again";
+    ul.before(p_tag); // 대상노드의 앞으로 붙이기(형제관계)
+    ol.after(p_tag2); // 대상노드의 뒤로 붙이기(형제관계)
+
+    // remove element
+    ul = document.querySelector(".ul");
+    let first_li_remove = ul.firstElementChild;
+    console.log(first_li_remove);
+    ul.removeChild(first_li_remove);
+
+    // replace element
+    ul = document.querySelector(".ul");
+    let target_li_replace = ul.lastElementChild.previousElementSibling;
+    console.log(target_li_replace);
+
+    let fourthLi = document.createElement("li");
+    fourthLi.innerText = "새로운 4번째 li";
+    ul.replaceChild(fourthLi, target_li_replace);
+
+</script>
+</body>
+</html>

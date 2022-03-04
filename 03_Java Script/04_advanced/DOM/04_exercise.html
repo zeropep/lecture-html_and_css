@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+    .clr-bv {
+        color: blueviolet;
+    }
+    .fs-5 {
+        font-size: 3em;
+    }
+    .dsp-n {
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <h1>DOM : Attribute, Attribute Value 컨트롤</h1>
+    <ul id="ul">
+        <li class="li first">lorem ipsum</li>
+        <li class="li">lorem ipsum</li>
+        <li class="li">lorem ipsum</li>
+        <li class="li">lorem ipsum</li>
+        <li>lorem ipsum</li>
+        <li class="li last">lorem ipsum</li>
+    </ul>
+    <button type="button" id="btn1">색상 변경</button>
+    <button type="button" id="btn2">크기 변경</button>
+    <button type="button" id="btn3">감추기</button>
+<script>
+    // setAttribute로 원하는 class 추가하기
+    document.getElementById("ul").setAttribute("class", "ul"); // id="ul" class="ul"
+    // html태그의 id와 className 찍어보기
+    console.log(document.getElementById("ul").id); // ul
+    console.log(document.getElementById("ul").className); // ul
+    // 여러 className을 arr 형식으로 가져오기
+    let arr = document.querySelector(".li.first").classList;
+    console.log(arr);
+    // arr.length, arr[index] 등 여러 방식으로 활용 가능
+
+    // 버튼 선택시 이미 만들어져 있는 class 추가하기 (1)
+    // onclick과 setAttribute
+    document.getElementById("btn1").onclick = () => {
+        document.querySelector("h1").setAttribute("class", "clr-bv");
+    }
+
+    // 버튼 선택시 이미 만들어져 있는 class 추가하기 (2)
+    // addEventListener와 classList
+    document.getElementById("btn2").addEventListener("click", () => {
+        let font = document.querySelector("ul > li").classList.add("fs-5");
+    })
+
+    // 버튼 선택시 class 추가하기 (3)
+    // querySelectorAll을 배열속성으로 꺼내보기
+    document.getElementById("btn3").addEventListener("click", () => {
+        let arr = document.querySelectorAll("button")[2];
+        arr.setAttribute("class", "dsp-n")
+    })
+
+</script>
+</body>
+</html>

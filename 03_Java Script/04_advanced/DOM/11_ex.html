@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="" />
+    <title></title>
+    <style>
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .window {
+        position: absolute;
+        width: 300px;
+        height: 400px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: beige;
+        border-radius: 5px;
+        box-shadow: 3px, 3px, 3px, rgba(0, 0, 0, 0.5);
+      }
+      .chat {
+        width: 100%;
+        height: 350px;
+        overflow-y: scroll;
+      }
+      .other {
+      }
+      .my {
+        text-align: right;
+      }
+      .bottom {
+        /* border: 1px solid black; */
+        width: 100%;
+        height: 50px;
+        position: fixed;
+        background-color: #fff;
+        bottom: 0;
+      }
+      .bottom > input {
+          width: 70%;
+          height: 90%;
+          margin-left: 5px;
+          top: 50%;
+          /* transform: translate(0, -50%); */
+      }
+      .bottom > button {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="window">
+      <div class="chat">
+        <p class="other">잘지내?</p>
+        <p class="other">자니?</p>
+      </div>
+      <div class="bottom">
+        <input
+          type=""
+          name=""
+          id="input"
+          autofocus
+          placeholder="대화내용이 들어갑니다."
+        />
+        <button type="button" id="btn">전송</button>
+      </div>
+    </div>
+    <script>
+        
+        document.getElementById("btn").addEventListener("click", () => {
+        const input = document.getElementById("input");
+        let p = document.createElement("p");
+        p.setAttribute("class", "my");
+        p.innerText = input.value;
+        document.querySelector(".chat").appendChild(p);
+        document.querySelector(".chat").scrollTop = document.querySelector(".chat").scrollHeight;
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>

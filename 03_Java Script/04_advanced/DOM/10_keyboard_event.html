@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>keyboard Event</h1>
+    <ul>
+        <li>keydown : </li>
+        <li>keypress : </li>
+        <li>keyup : </li>
+        <li>event.key(event.code) : </li>
+    </ul>
+    <h1>e.type : <span id="type"></span></h1>
+    <h1>e.key : <span id="key"></span></h1>
+    <h1>e.code : <span id="code"></span></h1>
+    입력 : <input type="text" id="ip">
+<script>
+    const type_h1 = document.getElementById("type");
+    const key_h1 = document.getElementById("key");
+    const code_h1 = document.getElementById("code");
+    document.getElementById("ip").addEventListener("keydown", (e) => {
+        type_h1.textContent = e.type;
+        key_h1.textContent = e.key;
+        code_h1.textContent = e.code;
+    });
+    
+    document.getElementById("ip").addEventListener("keypress", (e) => {
+        type_h1.textContent = e.type;
+        key_h1.textContent = e.key;
+        code_h1.textContent = e.code;
+    });
+
+    document.getElementById("ip").addEventListener("keyup", (e) => {
+        type_h1.textContent = e.type;
+        key_h1.textContent = e.key;
+        code_h1.textContent = e.code;
+    });
+
+</script>
+</body>
+</html>
