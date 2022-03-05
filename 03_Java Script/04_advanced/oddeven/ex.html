@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.main {
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 5px 5px 0px 5px;
+}
+.card {
+    /* position: relative; */
+    width: 55px;
+    height: 55px;
+    background-color: #fff;
+    display: inline-block;
+    line-height: 55px;
+    vertical-align: middle;
+    margin: 3px;
+}
+.odd {
+    background-color: violet;
+}
+.even {
+    background-color: yellowgreen;
+}
+</style>
+</head>
+<body>
+    <h1>홀수 & 짝수 표시기</h1>
+    <button type="button" id="start">번호 표시하기</button><br>
+    <div class="main">
+    </div>
+    <button type="button" id="even">짝수</button>
+    <button type="button" id="odd">홀수</button>
+<script>
+    
+    let arr = [];
+    document.getElementById("start").addEventListener("click", () => {
+        document.querySelector(".main").innerHTML = "";
+        let ranSet = new Set();
+        while (ranSet.size < 24) {
+        let num = Math.floor(Math.random()*98 + 1);
+        ranSet.add(num);
+        };
+        for (const elem of ranSet) {
+            let div = document.createElement("div");
+            div.innerText = elem;
+            div.setAttribute("class", `card a${elem}`);
+            document.querySelector(".main").appendChild(div);
+        };
+        arr = Array.from(ranSet);
+    });
+
+    document.getElementById("even").addEventListener("click", () => {
+        for (let i = 0; i < arr.length; i++) {
+            let find = arr[i];
+            let num = document.querySelector(`.a${find}`);
+            (num.innerText % 2 == 1) ? 
+                num.classList.add("odd")
+                : num.classList.remove("even")
+            
+        }
+    });
+
+    document.getElementById("odd").addEventListener("click", () => {
+        for (let i = 0; i < arr.length; i++) {
+            let find = arr[i];
+            let num = document.querySelector(`.a${find}`);
+            (num.innerText % 2 == 0) ? 
+            num.classList.add("even")
+                : num.classList.remove("odd")
+            
+        }
+    });
+</script>
+</body>
+</html>

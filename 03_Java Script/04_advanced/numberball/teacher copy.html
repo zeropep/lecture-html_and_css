@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>숫자야구</h1>
+    <ol>
+        <li>1~9까지 숫자 3개를 중복되지 않게 랜덤으로 정한다.</li>
+        <li>상대방은 3개를 정확히 맞춰야 함</li>
+        <li>스트라이크 : 값와 자릿수가 일치할 때</li>
+        <li>볼 : 값이 같으나 자릴수가 다를 때</li>
+        <li>아웃 : 값이 일치하는게 없을 때</li>
+    </ol>
+    <ul>
+        <li>형식은 자유</li>
+        <li>게임 진행상황은 기록될 것</li>
+        <li>(선택) 게임 진행 시간 기록</li>
+        <li>(선택) 시도 횟수 기록</li>
+        <li>(선택) 완료시간, 소요시간, 시도횟수 객체로 저장</li>
+        <li>(선택) 만든 객체를 배열로 저장</li>
+        <li>(선택) 배열로 저장된 기록을 정렬하기</li>
+    </ul>
+    <button type="button" id="start">게임 시작하기</button><br>
+    <input type="text" name="" id="predict">
+    <div id="count"></div>
+    <ol id="history">
+
+    </ol>
+    <div id="time"></div>
+    <h3 id="try"></h3>
+<script>
+    let rnum_arr;
+    let s_time = "";
+    let count = 0;
+    let try_predict = 0;
+
+    document.getElementById("start").addEventListener("click", startGame);
+    function startGame() {
+        s_time = new Date();
+        count++;
+        gameCount(count);
+
+        let rnum_set = new Set();
+        while (rnum_set.size < 3) {
+            let rnum = Math.floor(Math.random()*9 + 1);
+            rnum_set.add(rnum);
+        };
+        // console.log(rnum_set);
+        // console.log(rnum_set[0], rnum_set[1], rnum_set[2]); 
+        // undefined => array로 만들어야 함
+        rnum_arr = [...rnum_set];
+        console.log(rnum_arr);
+        document.getElementById("predict").value = "";
+        document.getElementById("history").innerHTML = "";
+        document.getElementById("time").innerHTML = "";
+        document.getElementById("try").innerHTML = "";
+    };
+
+    document.getElementById("predict").addEventListener("input", validation);
+    // button을 만들어도 되고 input 이벤트도 가능
+    
+    function validation() {
+        let pVal = document.getElementById("predict").value;
+        if (pVal.length == 3) { // 숫자 3개가 온 다음 동작해야 함
+            let predict = pVal.split("");
+            // string을 한글자씩 분리해서 arr로 만들기
+            console.log(predict);
+            compareNums(predict, rnum_arr);
+            try_predict++;
+        };
+    };
+
+    function compareNums(pArr, nArr) {
+        let strike = 0;
+        let ball = 0;
+        
+        for (let i = 0; i < nArr.length; i++) {
+            for (let j = 0; j < pArr.length; j++) {
+                if (nArr[i] == pArr[j] && i == j) {
+                    strike++;
+                } else if (nArr[i] == pArr[j] && i != j) {
+                    ball++;
+                }
+                
+            }
+            
+        }
+        let msg = "";
+        if (strike == 3) {
+            msg = "게임종료";
+            let e_time = new Date();
+            timediff(s_time, e_time);
+        } else if (strike == 0 && ball == 0) {
+            msg = "OUT"
+        } else {
+            msg = ` : ${strike}S ${ball}B`
+        }
+        printHistory(pArr.toString(), msg);
+    };
+    
+    function printHistory(nums, msg) {
+        let ol = document.getElementById("history");
+        let li = document.createElement("li");
+        li.innerText = `${nums} => ${msg}`
+        ol.appendChild(li);
+        document.getElementById("predict").value = "";
+        document.getElementById("predict").focus();
+
+    };
+
+    function timediff(s_time, e_time) {
+        let diff = ((e_time - s_time) / 1000).toFixed(1);
+        let time_div = document.createElement("div");
+        time_div.innerText = `게임 소요시간은 ${diff}초 입니다.`;
+        document.getElementById("time").appendChild(time_div);
+    };
+
+    function gameCount(count) {
+        document.getElementById("count").innerHTML = "";
+        let count_div = document.createElement("div");
+        count_div.innerText = `${count}번째 게임입니다.`;
+        document.getElementById("count").appendChild(count_div);
+    };
+</script>
+</body>
+</html>

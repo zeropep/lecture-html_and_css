@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="">
+<title></title>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>숫자야구</h1>
+    <ol>
+        <li>1~9까지 숫자 3개를 중복되지 않게 랜덤으로 정한다.</li>
+        <li>상대방은 3개를 정확히 맞춰야 함</li>
+        <li>스트라이크 : 값와 자릿수가 일치할 때</li>
+        <li>볼 : 값이 같으나 자릴수가 다를 때</li>
+        <li>아웃 : 값이 일치하는게 없을 때</li>
+    </ol>
+    <ul>
+        <li>형식은 자유</li>
+        <li>게임 진행상황은 기록될 것</li>
+        <li>(선택) 게임 진행 시간 기록</li>
+        <li>(선택) 시도 횟수 기록</li>
+        <li>(선택) 완료시간, 소요시간, 시도횟수 객체로 저장</li>
+        <li>(선택) 만든 객체를 배열로 저장</li>
+        <li>(선택) 배열로 저장된 기록을 정렬하기</li>
+    </ul>
+    <button type="button" id="start">게임 시작하기</button><br>
+    <input type="number" name="" id="num1">
+    <input type="number" name="" id="num2">
+    <input type="number" name="" id="num3">
+    <button type="button" id="btn">시도하기</button>
+    <div id="round">
+
+    </div>
+    <div id="record">
+
+    </div>
+    <div id="time">
+
+    </div>
+<script>
+    let game = 0;
+    document.getElementById("start").addEventListener("click", createGame);
+    function createGame() {
+        game++;
+        document.getElementById("record").innerHTML = "";
+        document.getElementById("time").innerHTML = "";
+        document.getElementById("round").innerHTML = "";
+        let nums = new Set();
+        while (nums.size < 3) {
+            let num = Math.floor(Math.random()*9 + 1)
+            nums.add(num);
+        };
+        let numArr = Array.from(nums);
+        console.log(numArr);
+
+        // 시간
+        let s_time = new Date();
+        let s_div = document.createElement("div");
+        s_div.innerText = `시작 시간 : ${s_time}`;
+        document.getElementById("time").appendChild(s_div);
+
+        // 게임라운드
+        let g_div = document.createElement("div");
+        g_div.innerText = `${game}번째 게임입니다.`;
+        document.getElementById("round").appendChild(g_div);
+
+        let myTry = [];
+        let tryCount = 0;
+        document.getElementById("btn").addEventListener("click", () => {
+            let e_time = new Date();
+            let diff = ((e_time - s_time) / 1000).toFixed(1);
+            myTry = [];
+            tryCount++;
+            let S = 0;
+            let B = 0;
+            let O = 0;
+            for (let i = 0; i < 3; i++) {
+                let num = parseInt(document.getElementById(`num${i+1}`).value);
+                myTry.push(num)
+            }
+            console.log(myTry);
+            for (let j = 0; j < myTry.length; j++) {
+                if (numArr[j] == myTry[j]) {
+                    S++;
+                } else if (numArr[j] != myTry[j] && numArr.includes(myTry[j])) {
+                    B++;
+                } else {
+                    O++;
+                };
+            };
+
+            let div = document.createElement("div");
+            if (O == 3) {
+                div.innerText = `${tryCount}번째 시도 : [${myTry}] => OUT!`;
+            } else if (S == 3) {
+                div.innerText = `${tryCount}번째 시도 : [${myTry}] => 정답입니다!`;
+                let e_div = document.createElement("div");
+                let diff_time = document.createElement("div");
+                e_div.innerText = `종료 시간 : ${e_time}`;
+                diff_time.innerText = `걸린 시간은 ${diff}초 입니다`;
+                document.getElementById("time").appendChild(e_div);
+                document.getElementById("time").appendChild(diff_time);
+            } else {
+                div.innerText = `${tryCount}번째 시도 : [${myTry}] => ${S}S, ${B}B`;
+            };
+            document.getElementById("record").appendChild(div);
+        });
+
+    }
+</script>
+</body>
+</html>
